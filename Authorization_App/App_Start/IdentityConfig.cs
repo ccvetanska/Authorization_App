@@ -20,7 +20,6 @@ namespace Authorization_App
         public async Task SendAsync(IdentityMessage message)
         {
             await configSendGridasync(message);
-            //return Task.FromResult(0);
         }
 
         // Use NuGet to install SendGrid (Basic C# client lib) 
