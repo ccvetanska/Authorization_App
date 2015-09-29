@@ -70,11 +70,11 @@ namespace Authorization_App.Account
                 var appUser = new ApplicationUser
                 {
                     UserName = Email.Text,
-                    Email = Email.Text,
-                    EmailConfirmed = true
+                    Email = Email.Text
                 };
-                IdUserResult = userMgr.Create(appUser, Password.Text);
 
+                IdUserResult = userMgr.Create(appUser, Password.Text);
+                
                 // If the new "adminUser" user was successfully created, 
                 // add the "adminUser" user to the "admin" role. 
                 if (!userMgr.IsInRole(userMgr.FindByEmail(Email.Text).Id, "admin"))
