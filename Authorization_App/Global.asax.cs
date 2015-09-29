@@ -20,7 +20,7 @@ namespace Authorization_App
 
             // Create the custom role and user.
             RoleActions roleActions = new RoleActions();
-            roleActions.AddUserAndRole();
+            roleActions.AddRole("admin");
         }
     }
 }
