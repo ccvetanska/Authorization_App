@@ -39,7 +39,7 @@
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <asp:Button runat="server" OnClick="CreateUser_Click" Text="Register" CssClass="btn btn-default" />
-                <asp:CheckBox runat="server" OnCheckedChanged="IsAdmin_CheckedChanged" Text="Admin"/>
+                <asp:CheckBox runat="server" Text="Admin" ID="IsAdminChekBox"/>
             </div>
         </div>
     </div>
