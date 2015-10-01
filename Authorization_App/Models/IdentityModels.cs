@@ -30,7 +30,7 @@ namespace Authorization_App.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("Authorization_App", throwIfV1Schema: false)
         {
         }
 
