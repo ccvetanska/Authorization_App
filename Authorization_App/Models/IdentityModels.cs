@@ -35,8 +35,14 @@ namespace Authorization_App.Models
         {
         }
 
-        // create the database for the Questions
+        // create the table for the Questions
         public DbSet<Question> Question { get; set; }
+
+        //create table for the QuestionOptions
+        public DbSet<QuestionOption> QuestionOption { get; set; }
+
+        //create table for the Contents
+        public DbSet<Content> Content { get; set; }
 
         public static ApplicationDbContext Create()
         {

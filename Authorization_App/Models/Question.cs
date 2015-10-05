@@ -34,5 +34,8 @@ namespace Authorization_App.Models
         {
             return new TimeSpan();
         }
+
+        public ICollection<QuestionOption> QuestionOptions { get; set; }
+
     }
 }
