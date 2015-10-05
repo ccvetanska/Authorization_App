@@ -7,6 +7,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Authorization_App.Models;
+using System.Data.Entity;
 
 namespace Authorization_App.Models
 {
@@ -33,6 +34,9 @@ namespace Authorization_App.Models
             : base("Authorization_App", throwIfV1Schema: false)
         {
         }
+
+        // create the database for the Questions
+        public DbSet<Question> Question { get; set; }
 
         public static ApplicationDbContext Create()
         {

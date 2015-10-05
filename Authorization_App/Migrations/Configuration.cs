@@ -14,13 +14,13 @@ namespace Authorization_App.Migrations
         }
 
         //if you want to automatically add an user to da database
-        //
-        //protected override void Seed(Authorization_App.Models.ApplicationDbContext context)
-        //{
-        //    context.Users.AddOrUpdate(
-        //                p => p.UserName,
-        //                new ApplicationUser { UserName = "User Name"}
-        //            );
-        //}
+        
+        protected override void Seed(Authorization_App.Models.ApplicationDbContext context)
+        {
+            context.Users.AddOrUpdate(
+                        p => p.UserName,
+                        new ApplicationUser { UserName = "User Name"}
+                    );
+        }
     }
 }
