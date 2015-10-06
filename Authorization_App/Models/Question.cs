@@ -4,13 +4,23 @@ using System.Linq;
 using System.Web;
 using System.Data.Entity;
 using System.ComponentModel.DataAnnotations;
+
 namespace Authorization_App.Models
 {
-    // model class for the database Questions
+    // (initial domain class) model class for the table Questions
+    // Question may include many QuestionOptions
     public class Question
     {
+        public Question()
+        {
+           var QuestionsList = new List<QuestionOption>();
+        }
+
         [Key]
         public int Id { get; set; }
+
+        // The user'ID who created the record
+        public int AuthorId { get; set; }
 
         public enum Type
         {
@@ -34,8 +44,14 @@ namespace Authorization_App.Models
         {
             return new TimeSpan();
         }
+        // the date when the question is created
+        public DateTime CreatedAt { get; set; }
 
-        public ICollection<QuestionOption> QuestionOptions { get; set; }
+        // The date when the question is updated
+        public DateTime? UpdatedAt { get; private set; }
 
+        public Content Content { get; set; }
+
+        public virtual ICollection<QuestionOption> QuestionOption { get; set; }
     }
 }

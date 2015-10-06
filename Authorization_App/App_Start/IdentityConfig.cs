@@ -28,7 +28,7 @@ namespace Authorization_App
             var myMessage = new SendGridMessage();
             myMessage.AddTo(message.Destination);
             myMessage.From = new System.Net.Mail.MailAddress(
-                                "tsvetelina@authorization_app.com", "Tsvetelina Tsvetanska (Authorization App Admin)");
+                                "s.mihaylov@authorization_app.com", "Samuil Mihaylov (Authorization App Admin)");
             myMessage.Subject = message.Subject;
             myMessage.Text = message.Body;
             myMessage.Html = message.Body;

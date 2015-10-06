@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Authorization_App.Models
 {
-    // model class for the database Content
+    // model class for the table Content
     public class Content
     {
         [Key]
