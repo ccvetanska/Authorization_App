@@ -18,11 +18,11 @@
 						    <asp:DynamicControl Mode="Edit" DataField="Description" runat="server" />
 						    <asp:DynamicControl Mode="Edit" DataField="Tags" runat="server" />
 						    <asp:DynamicControl Mode="Edit" DataField="Level" runat="server" />
-						    <asp:DynamicControl Mode="Edit" DataField="CreatedAt" runat="server" />
-						    <asp:DynamicControl Mode="Edit" DataField="UpdatedAt" runat="server" />
+						  <%--  <asp:DynamicControl Mode="ReadOnly" DataField="CreatedAt" runat="server" />--%>
+						    <asp:DynamicControl Mode="ReadOnly" DataField="UpdatedAt" runat="server" />
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
-							<asp:Button runat="server" ID="UpdateButton" CommandName="Update" Text="Update" CssClass="btn btn-primary" />
+							<asp:Button runat="server" ID="UpdateButton" CommandName="Update" Text="Update" CssClass="btn btn-primary"/>
 							<asp:Button runat="server" ID="CancelButton" CommandName="Cancel" Text="Cancel" CausesValidation="false" CssClass="btn btn-default" />
 						</div>
 					</div>

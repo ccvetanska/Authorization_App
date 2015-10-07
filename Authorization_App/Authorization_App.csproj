@@ -536,6 +536,10 @@
     <Compile Include="Migrations\201510061455071_DateTimeFieldsAdded.Designer.cs">
       <DependentUpon>201510061455071_DateTimeFieldsAdded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201510071552576_DateTimeFieldsFixed.cs" />
+    <Compile Include="Migrations\201510071552576_DateTimeFieldsFixed.Designer.cs">
+      <DependentUpon>201510071552576_DateTimeFieldsFixed.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Content.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -617,6 +621,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201510061455071_DateTimeFieldsAdded.resx">
       <DependentUpon>201510061455071_DateTimeFieldsAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510071552576_DateTimeFieldsFixed.resx">
+      <DependentUpon>201510071552576_DateTimeFieldsFixed.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

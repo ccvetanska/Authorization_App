@@ -12,10 +12,10 @@ namespace Authorization_App.Views.Question
     public partial class Insert : System.Web.UI.Page
     {
 		protected Authorization_App.Models.ApplicationDbContext _db = new Authorization_App.Models.ApplicationDbContext();
-
+        
         protected void Page_Load(object sender, EventArgs e)
         {
-
+           
         }
 
         // This is the Insert method to insert the entered Question item

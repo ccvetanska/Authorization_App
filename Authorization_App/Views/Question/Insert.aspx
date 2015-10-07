@@ -15,12 +15,12 @@
 						    <asp:DynamicControl Mode="Insert" DataField="Description" runat="server" />
 						    <asp:DynamicControl Mode="Insert" DataField="Tags" runat="server" />
 						    <asp:DynamicControl Mode="Insert" DataField="Level" runat="server" />
-						    <asp:DynamicControl Mode="Insert" DataField="CreatedAt" runat="server" />
-						    <asp:DynamicControl Mode="Insert" DataField="UpdatedAt" runat="server" />
+						 <%--   <asp:DynamicControl Mode="ReadOnly" DataField="CreatedAt" runat="server" />--%>
+						    <%--<asp:DynamicControl Mode="ReadOnly" DataField="UpdatedAt" runat="server" />--%>
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
                             <asp:Button runat="server" ID="InsertButton" CommandName="Insert" Text="Insert" CssClass="btn btn-primary" />
-                            <asp:Button runat="server" ID="CancelButton" CommandName="Cancel" Text="Cancel" CausesValidation="false" CssClass="btn btn-default" />
+                            <asp:Button runat="server" ID="CancelButton" CommandName="Cancel" Text="Cancel" CausesValidation="false" CssClass="btn btn-default"/>
                         </div>
 					</div>
                 </fieldset>

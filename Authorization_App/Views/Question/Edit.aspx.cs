@@ -12,15 +12,16 @@ namespace Authorization_App.Views.Question
 {
     public partial class Edit : System.Web.UI.Page
     {
-		protected Authorization_App.Models.ApplicationDbContext _db = new Authorization_App.Models.ApplicationDbContext();
+        protected Authorization_App.Models.ApplicationDbContext _db = new Authorization_App.Models.ApplicationDbContext();
 
         protected void Page_Load(object sender, EventArgs e)
         {
+
         }
 
         // This is the Update methd to update the selected Question item
         // USAGE: <asp:FormView UpdateMethod="UpdateItem">
-        public void UpdateItem(int  Id)
+        public void UpdateItem(int Id)
         {
             using (_db)
             {
@@ -61,10 +62,16 @@ namespace Authorization_App.Views.Question
 
         protected void ItemCommand(object sender, FormViewCommandEventArgs e)
         {
+
             if (e.CommandName.Equals("Cancel", StringComparison.OrdinalIgnoreCase))
             {
                 Response.Redirect("../Default");
             }
+        }
+
+        protected void Update(object sender, EventHandler e)
+        {
+
         }
     }
 }

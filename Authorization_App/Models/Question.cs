@@ -13,7 +13,8 @@ namespace Authorization_App.Models
     {
         public Question()
         {
-           var QuestionsList = new List<QuestionOption>();
+            CreatedAt = DateTime.Now;
+            var QuestionsList = new List<QuestionOption>();
         }
 
         [Key]
@@ -48,7 +49,7 @@ namespace Authorization_App.Models
         public DateTime CreatedAt { get; set; }
 
         // The date when the question is updated
-        public DateTime? UpdatedAt { get; private set; }
+        public DateTime? UpdatedAt { get; set; }
 
         public Content Content { get; set; }
 
