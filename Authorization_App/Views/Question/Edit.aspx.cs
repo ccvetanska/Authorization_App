@@ -8,6 +8,8 @@ using System.Web.UI.WebControls;
 using System.Data.Entity;
 using Microsoft.AspNet.FriendlyUrls.ModelBinding;
 using Authorization_App.Models;
+using Authorization_App.BusinessServices;
+
 namespace Authorization_App.Views.Question
 {
     public partial class Edit : System.Web.UI.Page
@@ -35,6 +37,7 @@ namespace Authorization_App.Views.Question
                 }
 
                 TryUpdateModel(item);
+                item.UpdatedAt = DateTime.Now;
 
                 if (ModelState.IsValid)
                 {
@@ -67,11 +70,13 @@ namespace Authorization_App.Views.Question
             {
                 Response.Redirect("../Default");
             }
+
+            if (e.CommandName.Equals("Update", StringComparison.OrdinalIgnoreCase))
+            {
+                
+            }
         }
 
-        protected void Update(object sender, EventHandler e)
-        {
 
-        }
     }
 }
