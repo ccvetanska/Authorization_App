@@ -7,18 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Authorization_App.Views.Question {
+namespace Authorization_App.Views.QuestionOption {
     
     
-    public partial class Edit {
+    public partial class Default {
         
         /// <summary>
-        /// FormView control.
+        /// ListView1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FormView FormView;
+        protected global::System.Web.UI.WebControls.ListView ListView1;
     }
 }

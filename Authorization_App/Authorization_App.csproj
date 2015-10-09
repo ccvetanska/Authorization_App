@@ -237,6 +237,11 @@
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
+    <Content Include="Views\QuestionOption\Default.aspx" />
+    <Content Include="Views\QuestionOption\Delete.aspx" />
+    <Content Include="Views\QuestionOption\Details.aspx" />
+    <Content Include="Views\QuestionOption\Edit.aspx" />
+    <Content Include="Views\QuestionOption\Insert.aspx" />
     <Content Include="Views\Question\Default.aspx" />
     <Content Include="Views\Question\Delete.aspx" />
     <Content Include="Views\Question\Details.aspx" />
@@ -380,7 +385,6 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="BusinessServices\QuestionService.cs" />
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -525,45 +529,21 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Logic\RoleActions.cs" />
-    <Compile Include="Migrations\201510021442471_Questions.cs" />
-    <Compile Include="Migrations\201510021442471_Questions.Designer.cs">
-      <DependentUpon>201510021442471_Questions.cs</DependentUpon>
+    <Compile Include="Migrations\201510091252461_Question.cs" />
+    <Compile Include="Migrations\201510091252461_Question.Designer.cs">
+      <DependentUpon>201510091252461_Question.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201510051546386_QuestionProperties.cs" />
-    <Compile Include="Migrations\201510051546386_QuestionProperties.Designer.cs">
-      <DependentUpon>201510051546386_QuestionProperties.cs</DependentUpon>
+    <Compile Include="Migrations\201510091254062_Content.cs" />
+    <Compile Include="Migrations\201510091254062_Content.Designer.cs">
+      <DependentUpon>201510091254062_Content.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201510061455071_DateTimeFieldsAdded.cs" />
-    <Compile Include="Migrations\201510061455071_DateTimeFieldsAdded.Designer.cs">
-      <DependentUpon>201510061455071_DateTimeFieldsAdded.cs</DependentUpon>
+    <Compile Include="Migrations\201510091301420_QuestionOption.cs" />
+    <Compile Include="Migrations\201510091301420_QuestionOption.Designer.cs">
+      <DependentUpon>201510091301420_QuestionOption.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201510071552576_DateTimeFieldsFixed.cs" />
-    <Compile Include="Migrations\201510071552576_DateTimeFieldsFixed.Designer.cs">
-      <DependentUpon>201510071552576_DateTimeFieldsFixed.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201510081342427_update.cs" />
-    <Compile Include="Migrations\201510081342427_update.Designer.cs">
-      <DependentUpon>201510081342427_update.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201510081408195_upd.cs" />
-    <Compile Include="Migrations\201510081408195_upd.Designer.cs">
-      <DependentUpon>201510081408195_upd.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201510090725557_authorid.cs" />
-    <Compile Include="Migrations\201510090725557_authorid.Designer.cs">
-      <DependentUpon>201510090725557_authorid.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201510090728313_cont_qoptions.cs" />
-    <Compile Include="Migrations\201510090728313_cont_qoptions.Designer.cs">
-      <DependentUpon>201510090728313_cont_qoptions.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201510090757544_removeUpdatedAt.cs" />
-    <Compile Include="Migrations\201510090757544_removeUpdatedAt.Designer.cs">
-      <DependentUpon>201510090757544_removeUpdatedAt.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201510090758263_reAddUpdatedAt.cs" />
-    <Compile Include="Migrations\201510090758263_reAddUpdatedAt.Designer.cs">
-      <DependentUpon>201510090758263_reAddUpdatedAt.cs</DependentUpon>
+    <Compile Include="Migrations\201510091303046_UpdatedAtFixed.cs" />
+    <Compile Include="Migrations\201510091303046_UpdatedAtFixed.Designer.cs">
+      <DependentUpon>201510091303046_UpdatedAtFixed.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Content.cs" />
@@ -597,6 +577,41 @@
     </Compile>
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\QuestionOption\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\QuestionOption\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\QuestionOption\Delete.aspx.cs">
+      <DependentUpon>Delete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\QuestionOption\Delete.aspx.designer.cs">
+      <DependentUpon>Delete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\QuestionOption\Details.aspx.cs">
+      <DependentUpon>Details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\QuestionOption\Details.aspx.designer.cs">
+      <DependentUpon>Details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\QuestionOption\Edit.aspx.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\QuestionOption\Edit.aspx.designer.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\QuestionOption\Insert.aspx.cs">
+      <DependentUpon>Insert.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\QuestionOption\Insert.aspx.designer.cs">
+      <DependentUpon>Insert.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Question\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -638,35 +653,17 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201510021442471_Questions.resx">
-      <DependentUpon>201510021442471_Questions.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201510091252461_Question.resx">
+      <DependentUpon>201510091252461_Question.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201510051546386_QuestionProperties.resx">
-      <DependentUpon>201510051546386_QuestionProperties.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201510091254062_Content.resx">
+      <DependentUpon>201510091254062_Content.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201510061455071_DateTimeFieldsAdded.resx">
-      <DependentUpon>201510061455071_DateTimeFieldsAdded.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201510091301420_QuestionOption.resx">
+      <DependentUpon>201510091301420_QuestionOption.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201510071552576_DateTimeFieldsFixed.resx">
-      <DependentUpon>201510071552576_DateTimeFieldsFixed.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201510081342427_update.resx">
-      <DependentUpon>201510081342427_update.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201510081408195_upd.resx">
-      <DependentUpon>201510081408195_upd.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201510090725557_authorid.resx">
-      <DependentUpon>201510090725557_authorid.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201510090728313_cont_qoptions.resx">
-      <DependentUpon>201510090728313_cont_qoptions.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201510090757544_removeUpdatedAt.resx">
-      <DependentUpon>201510090757544_removeUpdatedAt.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201510090758263_reAddUpdatedAt.resx">
-      <DependentUpon>201510090758263_reAddUpdatedAt.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201510091303046_UpdatedAtFixed.resx">
+      <DependentUpon>201510091303046_UpdatedAtFixed.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

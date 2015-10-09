@@ -8,27 +8,23 @@ using System.Web.UI.WebControls;
 using System.Data.Entity;
 using Microsoft.AspNet.FriendlyUrls.ModelBinding;
 using Authorization_App.Models;
-using System.Web.DynamicData;
-using System.Web.Security;
-
-namespace Authorization_App.Views.Question
+namespace Authorization_App.Views.QuestionOption
 {
     public partial class Edit : System.Web.UI.Page
     {
-        protected Authorization_App.Models.ApplicationDbContext _db = new Authorization_App.Models.ApplicationDbContext();
+		protected Authorization_App.Models.ApplicationDbContext _db = new Authorization_App.Models.ApplicationDbContext();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
 
-        // This is the Update methd to update the selected Question item
+        // This is the Update methd to update the selected QuestionOption item
         // USAGE: <asp:FormView UpdateMethod="UpdateItem">
-        public void UpdateItem(int Id)
+        public void UpdateItem(int  Id)
         {
             using (_db)
             {
-                var item = _db.Question.Find(Id);
+                var item = _db.QuestionOption.Find(Id);
 
                 if (item == null)
                 {
@@ -39,8 +35,6 @@ namespace Authorization_App.Views.Question
 
                 TryUpdateModel(item);
 
-                item.UpdatedAt = DateTime.Now;
-
                 if (ModelState.IsValid)
                 {
                     // Save changes here
@@ -50,9 +44,9 @@ namespace Authorization_App.Views.Question
             }
         }
 
-        // This is the Select method to selects a single Question item with the id
+        // This is the Select method to selects a single QuestionOption item with the id
         // USAGE: <asp:FormView SelectMethod="GetItem">
-        public Authorization_App.Models.Question GetItem([FriendlyUrlSegmentsAttribute(0)]int? Id)
+        public Authorization_App.Models.QuestionOption GetItem([FriendlyUrlSegmentsAttribute(0)]int? Id)
         {
             if (Id == null)
             {
@@ -61,20 +55,15 @@ namespace Authorization_App.Views.Question
 
             using (_db)
             {
-                return _db.Question.Find(Id);
+                return _db.QuestionOption.Find(Id);
             }
         }
 
         protected void ItemCommand(object sender, FormViewCommandEventArgs e)
         {
-
             if (e.CommandName.Equals("Cancel", StringComparison.OrdinalIgnoreCase))
             {
                 Response.Redirect("../Default");
-            }
-            if (e.CommandName.Equals("Add_Option", StringComparison.OrdinalIgnoreCase))
-            {
-                Response.Redirect("~/Views/QuestionOption/Default");
             }
         }
     }
