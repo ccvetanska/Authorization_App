@@ -77,6 +77,5 @@ namespace Authorization_App.Views.Question
             }
         }
 
-
     }
 }

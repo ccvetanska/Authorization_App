@@ -10,7 +10,7 @@
                 <fieldset class="form-horizontal">
 				<legend>Insert Question</legend>
 		        <asp:ValidationSummary runat="server" CssClass="alert alert-danger" />
-						    <asp:DynamicControl Mode="Insert" DataField="AuthorId" runat="server" />
+						    <%--<asp:DynamicControl Mode="Insert" DataField="AuthorId" runat="server" />--%>
 						    <asp:DynamicControl Mode="Insert" DataField="Title" runat="server" />
 						    <asp:DynamicControl Mode="Insert" DataField="Description" runat="server" />
 						    <asp:DynamicControl Mode="Insert" DataField="Tags" runat="server" />

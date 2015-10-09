@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.Entity;
+using Microsoft.AspNet.Identity;
 using Authorization_App.Models;
 
 namespace Authorization_App.Views.Question
@@ -26,8 +27,10 @@ namespace Authorization_App.Views.Question
             {
                 var item = new Authorization_App.Models.Question();
 
-                TryUpdateModel(item);
-
+                if (TryUpdateModel(item))
+                {
+                    item.AuthorId = HttpContext.Current.User.Identity.GetUserId();
+                }
                 if (ModelState.IsValid)
                 {
                     // Save changes

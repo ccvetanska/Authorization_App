@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Data.Entity;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNet.Identity;
+using System.Web.Security;
 
 namespace Authorization_App.Models
 {
@@ -21,7 +23,8 @@ namespace Authorization_App.Models
         public int Id { get; set; }
 
         // The user'ID who created the record
-        public int AuthorId { get; set; }
+        [StringLength(512)]
+        public string AuthorId { get; set; }
 
         public enum Type
         {
@@ -33,7 +36,6 @@ namespace Authorization_App.Models
         [StringLength(256)]
         public string Title { get; set; }
 
-        [StringLength(512)]
         public string Description { get; set; }
 
         [StringLength(1028)]
@@ -48,7 +50,7 @@ namespace Authorization_App.Models
         // the date when the question is created
         public DateTime CreatedAt { get; set; }
 
-        // The date when the question is updated
+        // The date when the question is updated 
         public DateTime? UpdatedAt { get; set; }
 
         public Content Content { get; set; }

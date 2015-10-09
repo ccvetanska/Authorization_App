@@ -541,6 +541,30 @@
     <Compile Include="Migrations\201510071552576_DateTimeFieldsFixed.Designer.cs">
       <DependentUpon>201510071552576_DateTimeFieldsFixed.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201510081342427_update.cs" />
+    <Compile Include="Migrations\201510081342427_update.Designer.cs">
+      <DependentUpon>201510081342427_update.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510081408195_upd.cs" />
+    <Compile Include="Migrations\201510081408195_upd.Designer.cs">
+      <DependentUpon>201510081408195_upd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510090725557_authorid.cs" />
+    <Compile Include="Migrations\201510090725557_authorid.Designer.cs">
+      <DependentUpon>201510090725557_authorid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510090728313_cont_qoptions.cs" />
+    <Compile Include="Migrations\201510090728313_cont_qoptions.Designer.cs">
+      <DependentUpon>201510090728313_cont_qoptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510090757544_removeUpdatedAt.cs" />
+    <Compile Include="Migrations\201510090757544_removeUpdatedAt.Designer.cs">
+      <DependentUpon>201510090757544_removeUpdatedAt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510090758263_reAddUpdatedAt.cs" />
+    <Compile Include="Migrations\201510090758263_reAddUpdatedAt.Designer.cs">
+      <DependentUpon>201510090758263_reAddUpdatedAt.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Content.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -625,6 +649,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201510071552576_DateTimeFieldsFixed.resx">
       <DependentUpon>201510071552576_DateTimeFieldsFixed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510081342427_update.resx">
+      <DependentUpon>201510081342427_update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510081408195_upd.resx">
+      <DependentUpon>201510081408195_upd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510090725557_authorid.resx">
+      <DependentUpon>201510090725557_authorid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510090728313_cont_qoptions.resx">
+      <DependentUpon>201510090728313_cont_qoptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510090757544_removeUpdatedAt.resx">
+      <DependentUpon>201510090757544_removeUpdatedAt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510090758263_reAddUpdatedAt.resx">
+      <DependentUpon>201510090758263_reAddUpdatedAt.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

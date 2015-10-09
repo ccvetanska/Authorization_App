@@ -13,7 +13,6 @@
                 <fieldset class="form-horizontal">
                     <legend>Edit Question</legend>
 					<asp:ValidationSummary runat="server" CssClass="alert alert-danger"  />                 
-						    <asp:DynamicControl Mode="Edit" DataField="AuthorId" runat="server" />
 						    <asp:DynamicControl Mode="Edit" DataField="Title" runat="server" />
 						    <asp:DynamicControl Mode="Edit" DataField="Description" runat="server" />
 						    <asp:DynamicControl Mode="Edit" DataField="Tags" runat="server" />
