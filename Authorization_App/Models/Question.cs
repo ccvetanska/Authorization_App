@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Data.Entity;
 using System.ComponentModel.DataAnnotations;
+using Authorization_App.Nomenclatures;
 
 namespace Authorization_App.Models
 {
@@ -23,13 +24,8 @@ namespace Authorization_App.Models
         // The user'ID who created the record
         public string AuthorId { get; set; }
 
-        public enum Type
-        {
-            Single,
-            Multiple,
-            Code,
-            Text
-        }
+        public QuestionTypes.QuestionType QuestionType { get; set; }
+
         [StringLength(256)]
         public string Title { get; set; }
 
@@ -53,6 +49,6 @@ namespace Authorization_App.Models
 
         public Content Content { get; set; }
 
-        public virtual ICollection<QuestionOption> QuestionOption { get; set; }
+       public virtual ICollection<QuestionOption> QuestionOption { get; set; }
     }
 }

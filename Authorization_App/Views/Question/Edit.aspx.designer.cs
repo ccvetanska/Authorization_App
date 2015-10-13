@@ -11,14 +11,5 @@ namespace Authorization_App.Views.Question {
     
     
     public partial class Edit {
-        
-        /// <summary>
-        /// FormView control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.FormView FormView;
     }
 }

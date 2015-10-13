@@ -9,11 +9,12 @@ using System.Web.Security;
 using Microsoft.AspNet.Identity;
 using Authorization_App.Models;
 
+
 namespace Authorization_App.Views.Question
 {
     public partial class Insert : System.Web.UI.Page
     {
-        protected Authorization_App.Models.ApplicationDbContext _db = new Authorization_App.Models.ApplicationDbContext();
+		protected Authorization_App.Models.ApplicationDbContext _db = new Authorization_App.Models.ApplicationDbContext();
 
         protected void Page_Load(object sender, EventArgs e)
         {

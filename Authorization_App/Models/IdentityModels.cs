@@ -30,7 +30,9 @@ namespace Authorization_App.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
-        public ApplicationDbContext() : base("Authorization_App", throwIfV1Schema: false) { }
+        public ApplicationDbContext() : base("Authorization_App", throwIfV1Schema: false) 
+        { 
+        }
 
         // create the table for the Questions
         public DbSet<Question> Question { get; set; }

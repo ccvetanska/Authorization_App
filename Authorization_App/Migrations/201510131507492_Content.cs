@@ -12,6 +12,7 @@ namespace Authorization_App.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
+                        ContentType = c.Int(nullable: false),
                         Body = c.String(maxLength: 1028),
                     })
                 .PrimaryKey(t => t.Id);

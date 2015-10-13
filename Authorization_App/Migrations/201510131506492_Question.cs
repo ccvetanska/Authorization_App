@@ -13,11 +13,13 @@ namespace Authorization_App.Migrations
                     {
                         Id = c.Int(nullable: false, identity: true),
                         AuthorId = c.String(),
+                        QuestionType = c.Int(nullable: false),
                         Title = c.String(maxLength: 256),
                         Description = c.String(maxLength: 512),
                         Tags = c.String(maxLength: 1028),
                         Level = c.Int(nullable: false),
                         CreatedAt = c.DateTime(nullable: false),
+                        UpdatedAt = c.DateTime(),
                     })
                 .PrimaryKey(t => t.Id);
             

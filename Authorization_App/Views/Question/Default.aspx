@@ -24,6 +24,9 @@
 								<asp:LinkButton Text="AuthorId" CommandName="Sort" CommandArgument="AuthorId" runat="Server" />
 							</th>
                             <th>
+								<asp:LinkButton Text="QuestionType" CommandName="Sort" CommandArgument="QuestionType" runat="Server" />
+							</th>
+                            <th>
 								<asp:LinkButton Text="Title" CommandName="Sort" CommandArgument="Title" runat="Server" />
 							</th>
                             <th>
@@ -63,6 +66,9 @@
 							</td>
 							<td>
 								<asp:DynamicControl runat="server" DataField="AuthorId" ID="AuthorId" Mode="ReadOnly" />
+							</td>
+							<td>
+								<asp:DynamicControl runat="server" DataField="QuestionType" ID="QuestionType" Mode="ReadOnly" />
 							</td>
 							<td>
 								<asp:DynamicControl runat="server" DataField="Title" ID="Title" Mode="ReadOnly" />

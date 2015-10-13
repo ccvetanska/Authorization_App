@@ -13,7 +13,7 @@ namespace Authorization_App.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201510091254062_Content"; }
+            get { return "201510131507492_Content"; }
         }
         
         string IMigrationMetadata.Source

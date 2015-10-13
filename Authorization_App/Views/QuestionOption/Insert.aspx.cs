@@ -11,7 +11,7 @@ namespace Authorization_App.Views.QuestionOption
 {
     public partial class Insert : System.Web.UI.Page
     {
-		protected Authorization_App.Models.ApplicationDbContext _db = new Authorization_App.Models.ApplicationDbContext();
+        protected Authorization_App.Models.ApplicationDbContext _db = new Authorization_App.Models.ApplicationDbContext();
 
         protected void Page_Load(object sender, EventArgs e)
         {

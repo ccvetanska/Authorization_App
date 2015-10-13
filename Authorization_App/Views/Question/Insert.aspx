@@ -12,16 +12,15 @@
                     <legend>Insert Question</legend>
                     <asp:ValidationSummary runat="server" CssClass="alert alert-danger" />
                     <asp:DynamicControl Mode="ReadOnly" DataField="AuthorId" runat="server" />
+                    <asp:DynamicControl Mode="Insert" DataField="QuestionType" runat="server" />
                     <asp:DynamicControl Mode="Insert" DataField="Title" runat="server" />
                     <asp:DynamicControl Mode="Insert" DataField="Description" runat="server" />
                     <asp:DynamicControl Mode="Insert" DataField="Tags" runat="server" />
                     <asp:DynamicControl Mode="Insert" DataField="Level" runat="server" />
-                    <%--   <asp:DynamicControl Mode="ReadOnly" DataField="CreatedAt" runat="server" />--%>
-                    <%--<asp:DynamicControl Mode="ReadOnly" DataField="UpdatedAt" runat="server" />--%>
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
                             <asp:Button runat="server" ID="InsertButton" CommandName="Insert" Text="Insert" CssClass="btn btn-primary" />
-                            <asp:Button runat="server" ID="AddOptionButton" CommandName="Add_Option" Text="Add Option" CssClass="btn btn-default"/>
+                            <asp:Button runat="server" ID="AddOptionButton" CommandName="Add_Option" Text="Add Option" CssClass="btn btn-default" />
                             <asp:Button runat="server" ID="CancelButton" CommandName="Cancel" Text="Cancel" CausesValidation="false" CssClass="btn btn-default" />
                         </div>
                     </div>

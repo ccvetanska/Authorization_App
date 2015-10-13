@@ -9,8 +9,6 @@
 
 namespace Authorization_App
 {
-
-
     public partial class About
     {
     }

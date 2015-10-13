@@ -529,27 +529,25 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Logic\RoleActions.cs" />
-    <Compile Include="Migrations\201510091252461_Question.cs" />
-    <Compile Include="Migrations\201510091252461_Question.Designer.cs">
-      <DependentUpon>201510091252461_Question.cs</DependentUpon>
+    <Compile Include="Migrations\201510131506492_Question.cs" />
+    <Compile Include="Migrations\201510131506492_Question.Designer.cs">
+      <DependentUpon>201510131506492_Question.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201510091254062_Content.cs" />
-    <Compile Include="Migrations\201510091254062_Content.Designer.cs">
-      <DependentUpon>201510091254062_Content.cs</DependentUpon>
+    <Compile Include="Migrations\201510131507492_Content.cs" />
+    <Compile Include="Migrations\201510131507492_Content.Designer.cs">
+      <DependentUpon>201510131507492_Content.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201510091301420_QuestionOption.cs" />
-    <Compile Include="Migrations\201510091301420_QuestionOption.Designer.cs">
-      <DependentUpon>201510091301420_QuestionOption.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201510091303046_UpdatedAtFixed.cs" />
-    <Compile Include="Migrations\201510091303046_UpdatedAtFixed.Designer.cs">
-      <DependentUpon>201510091303046_UpdatedAtFixed.cs</DependentUpon>
+    <Compile Include="Migrations\201510131508453_QuestionOption.cs" />
+    <Compile Include="Migrations\201510131508453_QuestionOption.Designer.cs">
+      <DependentUpon>201510131508453_QuestionOption.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Content.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Question.cs" />
     <Compile Include="Models\QuestionOption.cs" />
+    <Compile Include="Nomenclatures\ContentTypes.cs" />
+    <Compile Include="Nomenclatures\QuestionTypes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -653,17 +651,14 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201510091252461_Question.resx">
-      <DependentUpon>201510091252461_Question.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201510131506492_Question.resx">
+      <DependentUpon>201510131506492_Question.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201510091254062_Content.resx">
-      <DependentUpon>201510091254062_Content.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201510131507492_Content.resx">
+      <DependentUpon>201510131507492_Content.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201510091301420_QuestionOption.resx">
-      <DependentUpon>201510091301420_QuestionOption.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201510091303046_UpdatedAtFixed.resx">
-      <DependentUpon>201510091303046_UpdatedAtFixed.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201510131508453_QuestionOption.resx">
+      <DependentUpon>201510131508453_QuestionOption.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

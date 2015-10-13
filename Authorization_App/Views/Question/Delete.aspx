@@ -31,6 +31,14 @@
 							</div>
 							<div class="row">
 								<div class="col-sm-2 text-right">
+									<strong>QuestionType</strong>
+								</div>
+								<div class="col-sm-4">
+									<asp:DynamicControl runat="server" DataField="QuestionType" ID="QuestionType" Mode="ReadOnly" />
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-2 text-right">
 									<strong>Title</strong>
 								</div>
 								<div class="col-sm-4">

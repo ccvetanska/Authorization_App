@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Data.Entity;
 using System.ComponentModel.DataAnnotations;
+using Authorization_App.Nomenclatures;
 
 namespace Authorization_App.Models
 {
@@ -13,13 +14,7 @@ namespace Authorization_App.Models
         [Key]
         public int Id { get; set; }
 
-        public enum Type
-        {
-            Text,
-            Code,
-            Video,
-            Audio
-        }
+        public ContentTypes.ContentType ContentType { get; set; }
 
         [MaxLength(1028)]
         public string Body { get; set; }
