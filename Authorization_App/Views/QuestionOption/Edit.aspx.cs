@@ -65,6 +65,10 @@ namespace Authorization_App.Views.QuestionOption
             {
                 Response.Redirect("../Default");
             }
+            if (e.CommandName.Equals("Add_Content", StringComparison.OrdinalIgnoreCase))
+            {
+                Response.Redirect("~/Views/Content/Insert");
+            }
         }
     }
 }

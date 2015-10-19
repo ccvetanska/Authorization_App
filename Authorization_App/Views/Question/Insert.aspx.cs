@@ -51,6 +51,7 @@ namespace Authorization_App.Views.Question
             {
                 Response.Redirect("Default");
             }
+
             if (e.CommandName.Equals("Add_Option", StringComparison.OrdinalIgnoreCase))
             {
                 Response.Redirect("~/Views/QuestionOption/Default");

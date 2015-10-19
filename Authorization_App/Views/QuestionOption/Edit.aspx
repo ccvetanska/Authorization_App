@@ -24,6 +24,7 @@
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
                             <asp:Button runat="server" ID="UpdateButton" CommandName="Update" Text="Update" CssClass="btn btn-primary" />
+                            <asp:Button runat="server" ID="AddContentButton" CommandName="Add_Content" Text="Add Content" CssClass="btn btn-primary" /> 
                             <asp:Button runat="server" ID="CancelButton" CommandName="Cancel" Text="Cancel" CausesValidation="false" CssClass="btn btn-default" />
                         </div>
                     </div>
