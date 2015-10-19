@@ -237,6 +237,11 @@
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
+    <Content Include="Views\Content\Default.aspx" />
+    <Content Include="Views\Content\Delete.aspx" />
+    <Content Include="Views\Content\Details.aspx" />
+    <Content Include="Views\Content\Edit.aspx" />
+    <Content Include="Views\Content\Insert.aspx" />
     <Content Include="Views\QuestionOption\Default.aspx" />
     <Content Include="Views\QuestionOption\Delete.aspx" />
     <Content Include="Views\QuestionOption\Details.aspx" />
@@ -529,17 +534,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Logic\RoleActions.cs" />
-    <Compile Include="Migrations\201510131506492_Question.cs" />
-    <Compile Include="Migrations\201510131506492_Question.Designer.cs">
-      <DependentUpon>201510131506492_Question.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201510131507492_Content.cs" />
-    <Compile Include="Migrations\201510131507492_Content.Designer.cs">
-      <DependentUpon>201510131507492_Content.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201510131508453_QuestionOption.cs" />
-    <Compile Include="Migrations\201510131508453_QuestionOption.Designer.cs">
-      <DependentUpon>201510131508453_QuestionOption.cs</DependentUpon>
+    <Compile Include="Migrations\201510191203138_initial.cs" />
+    <Compile Include="Migrations\201510191203138_initial.Designer.cs">
+      <DependentUpon>201510191203138_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Content.cs" />
@@ -575,6 +572,41 @@
     </Compile>
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Content\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Content\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Content\Delete.aspx.cs">
+      <DependentUpon>Delete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Content\Delete.aspx.designer.cs">
+      <DependentUpon>Delete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Content\Details.aspx.cs">
+      <DependentUpon>Details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Content\Details.aspx.designer.cs">
+      <DependentUpon>Details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Content\Edit.aspx.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Content\Edit.aspx.designer.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Content\Insert.aspx.cs">
+      <DependentUpon>Insert.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Content\Insert.aspx.designer.cs">
+      <DependentUpon>Insert.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\QuestionOption\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -651,14 +683,8 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201510131506492_Question.resx">
-      <DependentUpon>201510131506492_Question.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201510131507492_Content.resx">
-      <DependentUpon>201510131507492_Content.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201510131508453_QuestionOption.resx">
-      <DependentUpon>201510131508453_QuestionOption.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201510191203138_initial.resx">
+      <DependentUpon>201510191203138_initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

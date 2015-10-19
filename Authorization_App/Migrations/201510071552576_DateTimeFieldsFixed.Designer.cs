@@ -7,13 +7,13 @@ namespace Authorization_App.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class Content : IMigrationMetadata
+    public sealed partial class DateTimeFieldsFixed : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Content));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(DateTimeFieldsFixed));
         
         string IMigrationMetadata.Id
         {
-            get { return "201510131507492_Content"; }
+            get { return "201510071552576_DateTimeFieldsFixed"; }
         }
         
         string IMigrationMetadata.Source

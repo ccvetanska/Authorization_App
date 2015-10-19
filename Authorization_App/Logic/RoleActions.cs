@@ -25,10 +25,12 @@ namespace Authorization_App.Logic
             var roleMgr = new RoleManager<IdentityRole>(roleStore);
 
             // Then, you create the "roleName" role if it doesn't already exist.
+
             if (!roleMgr.RoleExists(roleName))
             {
-                IdRoleResult = roleMgr.Create(new IdentityRole { Name = roleName });
+                IdRoleResult= roleMgr.Create(new IdentityRole { Name = roleName });
             }
+
         }
     }
 }

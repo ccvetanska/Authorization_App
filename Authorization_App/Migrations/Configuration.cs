@@ -48,3 +48,4 @@ namespace Authorization_App.Migrations
         }
     }
 }
+

@@ -7,31 +7,31 @@ using System.Web.UI.WebControls;
 using System.Data.Entity;
 using Authorization_App.Models;
 
-namespace Authorization_App.Views.QuestionOption
+namespace Authorization_App.Views.Content
 {
     public partial class Insert : System.Web.UI.Page
     {
-        protected Authorization_App.Models.ApplicationDbContext _db = new Authorization_App.Models.ApplicationDbContext();
+		protected Authorization_App.Models.ApplicationDbContext _db = new Authorization_App.Models.ApplicationDbContext();
 
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
 
-        // This is the Insert method to insert the entered QuestionOption item
+        // This is the Insert method to insert the entered Content item
         // USAGE: <asp:FormView InsertMethod="InsertItem">
         public void InsertItem()
         {
             using (_db)
             {
-                var item = new Authorization_App.Models.QuestionOption();
+                var item = new Authorization_App.Models.Content();
 
                 TryUpdateModel(item);
 
                 if (ModelState.IsValid)
                 {
                     // Save changes
-                    _db.QuestionOption.Add(item);
+                    _db.Content.Add(item);
                     _db.SaveChanges();
 
                     Response.Redirect("Default");
@@ -44,11 +44,6 @@ namespace Authorization_App.Views.QuestionOption
             if (e.CommandName.Equals("Cancel", StringComparison.OrdinalIgnoreCase))
             {
                 Response.Redirect("Default");
-            }
-
-            if (e.CommandName.Equals("Add_Content", StringComparison.OrdinalIgnoreCase))
-            {
-                Response.Redirect("~/Views/Content/Insert");
             }
         }
     }

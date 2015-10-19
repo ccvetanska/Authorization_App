@@ -7,13 +7,13 @@ namespace Authorization_App.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class Question : IMigrationMetadata
+    public sealed partial class upd : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Question));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(upd));
         
         string IMigrationMetadata.Id
         {
-            get { return "201510131506492_Question"; }
+            get { return "201510081408195_upd"; }
         }
         
         string IMigrationMetadata.Source
