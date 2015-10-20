@@ -6,7 +6,7 @@ using System.Data.Entity;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Authorization_App.Models
+namespace Authorization_App.Model
 {
     // model class for the table QuestionsOptions
     public class QuestionOption

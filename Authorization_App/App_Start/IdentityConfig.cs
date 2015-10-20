@@ -6,7 +6,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
-using Authorization_App.Models;
+using Authorization_App.Model;
 using SendGrid;
 using System.Net;
 using System.Configuration;

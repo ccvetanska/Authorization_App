@@ -5,12 +5,13 @@ using System.Web;
 using System.Data.Entity;
 using System.ComponentModel.DataAnnotations;
 using Authorization_App.Nomenclatures;
+using Authorization_App.DataAccess;
 
-namespace Authorization_App.Models
+namespace Authorization_App.Model
 {
     // (initial domain class) model class for the table Questions
     // Question may include many QuestionOptions
-    public class Question
+    public class Question : IEntity
     {
         public Question()
         {
