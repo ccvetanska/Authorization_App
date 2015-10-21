@@ -7,7 +7,7 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.DataProtection;
 using Microsoft.Owin.Security.Google;
 using Owin;
-using Authorization_App.Models;
+using Authorization_App.DataAccess;
 
 namespace Authorization_App
 {

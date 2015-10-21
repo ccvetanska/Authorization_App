@@ -9,7 +9,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Authorization_App.Model
 {
     // model class for the table QuestionsOptions
-    public class QuestionOption
+    public class QuestionOption : IEntity
     {
         public QuestionOption() { }
         [Key]

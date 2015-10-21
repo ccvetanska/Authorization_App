@@ -7,12 +7,12 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.Entity;
 using Microsoft.AspNet.FriendlyUrls.ModelBinding;
-using Authorization_App.Models;
+using Authorization_App.Model;
 namespace Authorization_App.Views.Content
 {
     public partial class Edit : System.Web.UI.Page
     {
-		protected Authorization_App.Models.ApplicationDbContext _db = new Authorization_App.Models.ApplicationDbContext();
+        protected Authorization_App.DataAccess.ApplicationDbContext _db = new Authorization_App.DataAccess.ApplicationDbContext();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -46,7 +46,7 @@ namespace Authorization_App.Views.Content
 
         // This is the Select method to selects a single Content item with the id
         // USAGE: <asp:FormView SelectMethod="GetItem">
-        public Authorization_App.Models.Content GetItem([FriendlyUrlSegmentsAttribute(0)]int? Id)
+        public Authorization_App.Model.Content GetItem([FriendlyUrlSegmentsAttribute(0)]int? Id)
         {
             if (Id == null)
             {

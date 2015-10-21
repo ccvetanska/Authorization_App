@@ -7,13 +7,12 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.Entity;
 using Microsoft.AspNet.FriendlyUrls.ModelBinding;
-using Authorization_App.Models;
 
 namespace Authorization_App.Views.QuestionOption
 {
     public partial class Delete : System.Web.UI.Page
     {
-		protected Authorization_App.Models.ApplicationDbContext _db = new Authorization_App.Models.ApplicationDbContext();
+        protected Authorization_App.DataAccess.ApplicationDbContext _db = new Authorization_App.DataAccess.ApplicationDbContext();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -38,7 +37,7 @@ namespace Authorization_App.Views.QuestionOption
 
         // This is the Select methd to selects a single QuestionOption item with the id
         // USAGE: <asp:FormView SelectMethod="GetItem">
-        public Authorization_App.Models.QuestionOption GetItem([FriendlyUrlSegmentsAttribute(0)]int? Id)
+        public Authorization_App.Model.QuestionOption GetItem([FriendlyUrlSegmentsAttribute(0)]int? Id)
         {
             if (Id == null)
             {

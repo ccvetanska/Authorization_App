@@ -9,12 +9,11 @@ using Owin;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.AspNet.Identity.EntityFramework;
-using Authorization_App.Models;
 using Authorization_App.Logic;
 
 namespace Authorization_App.Migrations
 {
-    internal sealed class Configuration : DbMigrationsConfiguration<Authorization_App.Models.ApplicationDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<Authorization_App.DataAccess.ApplicationDbContext>
     {
         public Configuration()
         {
@@ -22,14 +21,14 @@ namespace Authorization_App.Migrations
         }
 
         // If you want to automatically add an user to da database
-        protected override void Seed(Authorization_App.Models.ApplicationDbContext context)
+        protected override void Seed(Authorization_App.DataAccess.ApplicationDbContext context)
         {
             RoleActions roleActions = new RoleActions();
             roleActions.AddRole("admin");
-            var userMgr = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
+            var userMgr = new UserManager<IdentityUser>(new UserStore<IdentityUser>(context));
 
             //create a default admin user
-            var appUser = new ApplicationUser()
+            var appUser = new IdentityUser()
             {
                 UserName = "adminUser@authorizationapp.com",
                 Email = "adminUser@authorizationapp.com",
@@ -37,7 +36,7 @@ namespace Authorization_App.Migrations
             };
            
             var IdUserResult = new IdentityResult();
-            IdUserResult = userMgr.Create(appUser, "Pa$$word");
+            IdUserResult = userMgr.Create(appUser, "Sa1b2v3c4m!");
 
             // If the new "admin" user was successfully created, 
             // add the "admin" user to the "admin" role. 

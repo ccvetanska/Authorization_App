@@ -5,13 +5,12 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.Entity;
-using Authorization_App.Models;
 
 namespace Authorization_App.Views.Content
 {
     public partial class Insert : System.Web.UI.Page
     {
-		protected Authorization_App.Models.ApplicationDbContext _db = new Authorization_App.Models.ApplicationDbContext();
+        protected Authorization_App.DataAccess.ApplicationDbContext _db = new Authorization_App.DataAccess.ApplicationDbContext();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -24,7 +23,7 @@ namespace Authorization_App.Views.Content
         {
             using (_db)
             {
-                var item = new Authorization_App.Models.Content();
+                var item = new Authorization_App.Model.Content();
 
                 TryUpdateModel(item);
 

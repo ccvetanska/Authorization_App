@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using Authorization_App.DataAccess;
 
 namespace Authorization_App.Logic
 {
@@ -13,7 +14,7 @@ namespace Authorization_App.Logic
         internal void AddRole(string roleName)
         {
             // Access the application context and create result variables.
-            Model.ApplicationDbContext context = new ApplicationDbContext();
+            DataAccess.ApplicationDbContext context = new ApplicationDbContext();
             IdentityResult IdRoleResult;
 
             // Create a RoleStore object by using the ApplicationDbContext object. 

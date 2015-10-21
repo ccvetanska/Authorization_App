@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using System.Threading.Tasks;
-using Authorization_App.Models;
+using Authorization_App.Model;
 
 namespace Authorization_App.Account
 {

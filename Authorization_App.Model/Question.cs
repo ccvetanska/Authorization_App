@@ -5,7 +5,6 @@ using System.Web;
 using System.Data.Entity;
 using System.ComponentModel.DataAnnotations;
 using Authorization_App.Nomenclatures;
-using Authorization_App.DataAccess;
 
 namespace Authorization_App.Model
 {

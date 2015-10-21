@@ -66,6 +66,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -73,9 +74,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApplicationUser.cs" />
     <Compile Include="Content.cs" />
-    <Compile Include="IdentityModels.cs" />
+    <Compile Include="IEntity.cs" />
     <Compile Include="Nomenclatures\ContentTypes.cs" />
     <Compile Include="Nomenclatures\QuestionTypes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -85,12 +85,6 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Authorization_App.DataAccess\Authorization_App.DataAccess.csproj">
-      <Project>{b480efda-8602-47ce-9d86-1e9b98a245f2}</Project>
-      <Name>Authorization_App.DataAccess</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
