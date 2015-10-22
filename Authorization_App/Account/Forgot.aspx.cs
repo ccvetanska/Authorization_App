@@ -5,6 +5,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Owin;
 using Authorization_App.Model;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace Authorization_App.Account
 {
@@ -20,7 +21,7 @@ namespace Authorization_App.Account
             {
                 // Validate the user's email address
                 var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
-                ApplicationUser user = manager.FindByName(Email.Text);
+                IdentityUser user = manager.FindByName(Email.Text);
                 if (user == null || !manager.IsEmailConfirmed(user.Id))
                 {
                     FailureText.Text = "The user either does not exist or is not confirmed.";

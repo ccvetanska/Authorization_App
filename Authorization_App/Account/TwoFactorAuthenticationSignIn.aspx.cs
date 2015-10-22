@@ -7,6 +7,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace Authorization_App.Account
 {
@@ -23,7 +24,7 @@ namespace Authorization_App.Account
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            var userId = signinManager.GetVerifiedUserId<ApplicationUser, string>();
+            var userId = signinManager.GetVerifiedUserId<IdentityUser, string>();
             if (userId == null)
             {
                 Response.Redirect("/Account/Error", true);
@@ -37,8 +38,8 @@ namespace Authorization_App.Account
         {
             bool rememberMe = false;
             bool.TryParse(Request.QueryString["RememberMe"], out rememberMe);
-            
-            var result = signinManager.TwoFactorSignIn<ApplicationUser, string>(SelectedProvider.Value, Code.Text, isPersistent: rememberMe, rememberBrowser: RememberBrowser.Checked);
+
+            var result = signinManager.TwoFactorSignIn<IdentityUser, string>(SelectedProvider.Value, Code.Text, isPersistent: rememberMe, rememberBrowser: RememberBrowser.Checked);
             switch (result)
             {
                 case SignInStatus.Success:
@@ -62,7 +63,7 @@ namespace Authorization_App.Account
                 Response.Redirect("/Account/Error");
             }
 
-            var user = manager.FindById(signinManager.GetVerifiedUserId<ApplicationUser, string>());
+            var user = manager.FindById(signinManager.GetVerifiedUserId<IdentityUser, string>());
             if (user != null)
             {
                 var code = manager.GenerateTwoFactorToken(user.Id, Providers.SelectedValue);

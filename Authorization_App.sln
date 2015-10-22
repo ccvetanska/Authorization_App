@@ -4,12 +4,24 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Authorization_App", "Authorization_App\Authorization_App.csproj", "{EEDFBAE6-0570-49CD-902F-403059097BAC}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C22F6107-2C3A-4A61-9870-10C23AF56E0F} = {C22F6107-2C3A-4A61-9870-10C23AF56E0F}
+		{28094255-DE9F-4C72-8552-B970BE6D9EE0} = {28094255-DE9F-4C72-8552-B970BE6D9EE0}
+		{B480EFDA-8602-47CE-9D86-1E9B98A245F2} = {B480EFDA-8602-47CE-9D86-1E9B98A245F2}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Authorization_App.Model", "Authorization_App.Model\Authorization_App.Model.csproj", "{C22F6107-2C3A-4A61-9870-10C23AF56E0F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Authorization_App.BusinessServices", "Authorization_App.BusinessServices\Authorization_App.BusinessServices.csproj", "{28094255-DE9F-4C72-8552-B970BE6D9EE0}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C22F6107-2C3A-4A61-9870-10C23AF56E0F} = {C22F6107-2C3A-4A61-9870-10C23AF56E0F}
+		{B480EFDA-8602-47CE-9D86-1E9B98A245F2} = {B480EFDA-8602-47CE-9D86-1E9B98A245F2}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Authorization_App.DataAccess", "Authorization_App.DataAccess\Authorization_App.DataAccess.csproj", "{B480EFDA-8602-47CE-9D86-1E9B98A245F2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C22F6107-2C3A-4A61-9870-10C23AF56E0F} = {C22F6107-2C3A-4A61-9870-10C23AF56E0F}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -5,6 +5,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Owin;
 using Authorization_App.Model;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace Authorization_App.Account
 {
@@ -93,7 +94,7 @@ namespace Authorization_App.Account
             }
             var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
             var signInManager = Context.GetOwinContext().GetUserManager<ApplicationSignInManager>();
-            var user = new ApplicationUser() { UserName = email.Text, Email = email.Text };
+            var user = new IdentityUser() { UserName = email.Text, Email = email.Text };
             IdentityResult result = manager.Create(user);
             if (result.Succeeded)
             {
