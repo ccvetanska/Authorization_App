@@ -4,7 +4,7 @@
 		<p>&nbsp;</p>
       
         <asp:FormView runat="server"
-            ItemType="Authorization_App.Models.QuestionOption" DataKeyNames="Id"
+            ItemType="Authorization_App.Model.QuestionOption, Authorization_App.Model" DataKeyNames="Id"
             SelectMethod="GetItem"
             OnItemCommand="ItemCommand" RenderOuterTable="false">
             <EmptyDataTemplate>

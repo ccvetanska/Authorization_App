@@ -4,7 +4,7 @@
 		<p>&nbsp;</p>
         <h3>Are you sure want to delete this Content?</h3>
         <asp:FormView runat="server"
-            ItemType="Authorization_App.Models.Content" DataKeyNames="Id"
+            ItemType="Authorization_App.Model.Content" DataKeyNames="Id"
             DeleteMethod="DeleteItem" SelectMethod="GetItem"
             OnItemCommand="ItemCommand" RenderOuterTable="false">
             <EmptyDataTemplate>

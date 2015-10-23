@@ -3,7 +3,7 @@
     <div>
 		<p>&nbsp;</p>
         <asp:FormView runat="server"
-            ItemType="Authorization_App.Models.Content" DefaultMode="Insert"
+            ItemType="Authorization_App.Model.Content" DefaultMode="Insert"
             InsertItemPosition="FirstItem" InsertMethod="InsertItem"
             OnItemCommand="ItemCommand" RenderOuterTable="false">
             <InsertItemTemplate>

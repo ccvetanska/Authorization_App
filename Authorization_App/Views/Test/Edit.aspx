@@ -1,20 +1,21 @@
-﻿<%@ Page Title="ContentEdit" Language="C#" MasterPageFile="~/Site.Master" CodeBehind="Edit.aspx.cs" Inherits="Authorization_App.Views.Content.Edit" %>
+﻿<%@ Page Title="TestEdit" Language="C#" MasterPageFile="~/Site.Master" CodeBehind="Edit.aspx.cs" Inherits="Authorization_App.Views.Test.Edit" %>
 <asp:Content runat="server" ContentPlaceHolderID="MainContent">
     <div>
 		<p>&nbsp;</p>
         <asp:FormView runat="server"
-            ItemType="Authorization_App.Model.Content" DefaultMode="Edit" DataKeyNames="Id"
+            ItemType="Authorization_App.Model.Test" DefaultMode="Edit" DataKeyNames="Id"
             UpdateMethod="UpdateItem" SelectMethod="GetItem"
             OnItemCommand="ItemCommand" RenderOuterTable="false">
             <EmptyDataTemplate>
-                Cannot find the Content with Id <%: Request.QueryString["Id"] %>
+                Cannot find the Test with Id <%: Request.QueryString["Id"] %>
             </EmptyDataTemplate>
             <EditItemTemplate>
                 <fieldset class="form-horizontal">
-                    <legend>Edit Content</legend>
+                    <legend>Edit Test</legend>
 					<asp:ValidationSummary runat="server" CssClass="alert alert-danger"  />                 
-						    <asp:DynamicControl Mode="Edit" DataField="ContentType" runat="server" />
-						    <asp:DynamicControl Mode="Edit" DataField="Body" runat="server" />
+						    <asp:DynamicControl Mode="Edit" DataField="Name" runat="server" />
+						    <asp:DynamicControl Mode="Edit" DataField="AuthorId" runat="server" />
+						    <asp:DynamicControl Mode="Edit" DataField="isActive" runat="server" />
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
 							<asp:Button runat="server" ID="UpdateButton" CommandName="Update" Text="Update" CssClass="btn btn-primary" />

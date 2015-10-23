@@ -8,7 +8,7 @@ using System.Data.Entity;
 using Authorization_App.Model;
 using Authorization_App.DataAccess;
 
-namespace Authorization_App.Views.Question
+namespace Authorization_App.Views.Test
 {
     public partial class Default : System.Web.UI.Page
     {
@@ -18,11 +18,11 @@ namespace Authorization_App.Views.Question
         {
         }
 
-        // Model binding method to get List of Question entries
+        // Model binding method to get List of Test entries
         // USAGE: <asp:ListView SelectMethod="GetData">
-        public IQueryable<Authorization_App.Model.Question> GetData()
+        public IQueryable<Authorization_App.Model.Test> GetData()
         {
-            return _db.Question;
+            return _db.Test;
         }
     }
 }

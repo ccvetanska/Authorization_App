@@ -5,14 +5,14 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.Entity;
-using System.Web.Security;
-using Microsoft.AspNet.Identity;
+using Authorization_App.Model;
+using Authorization_App.DataAccess;
 
 namespace Authorization_App.Views.Question
 {
     public partial class Insert : System.Web.UI.Page
     {
-        protected Authorization_App.DataAccess.ApplicationDbContext _db = new Authorization_App.DataAccess.ApplicationDbContext();
+		protected Authorization_App.DataAccess.ApplicationDbContext _db = new Authorization_App.DataAccess.ApplicationDbContext();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -28,9 +28,6 @@ namespace Authorization_App.Views.Question
                 var item = new Authorization_App.Model.Question();
 
                 TryUpdateModel(item);
-
-                string userId = HttpContext.Current.User.Identity.GetUserId();
-                item.AuthorId = userId;
 
                 if (ModelState.IsValid)
                 {
@@ -49,7 +46,6 @@ namespace Authorization_App.Views.Question
             {
                 Response.Redirect("Default");
             }
-
             if (e.CommandName.Equals("Add_Option", StringComparison.OrdinalIgnoreCase))
             {
                 Response.Redirect("~/Views/QuestionOption/Default");

@@ -1,17 +1,17 @@
-﻿<%@ Page Title="QuestionOptionList" Language="C#" MasterPageFile="~/Site.Master" CodeBehind="Default.aspx.cs" Inherits="Authorization_App.Views.QuestionOption.Default" %>
+﻿<%@ Page Title="TestList" Language="C#" MasterPageFile="~/Site.Master" CodeBehind="Default.aspx.cs" Inherits="Authorization_App.Views.Test.Default" %>
 <%@ Register TagPrefix="FriendlyUrls" Namespace="Microsoft.AspNet.FriendlyUrls" %>
 <asp:Content runat="server" ContentPlaceHolderID="MainContent">
-    <h2>QuestionOption List</h2>
+    <h2>Test List</h2>
     <p>
         <asp:HyperLink runat="server" NavigateUrl="Insert" Text="Create new" />
     </p>
     <div>
         <asp:ListView id="ListView1" runat="server"
             DataKeyNames="Id" 
-			ItemType="Authorization_App.Model.QuestionOption"
+			ItemType="Authorization_App.Model.Test"
             SelectMethod="GetData">
             <EmptyDataTemplate>
-                There are no entries found for QuestionOption
+                There are no entries found for Test
             </EmptyDataTemplate>
             <LayoutTemplate>
                 <table class="table">
@@ -21,10 +21,13 @@
 								<asp:LinkButton Text="Id" CommandName="Sort" CommandArgument="Id" runat="Server" />
 							</th>
                             <th>
-								<asp:LinkButton Text="isCorrect" CommandName="Sort" CommandArgument="isCorrect" runat="Server" />
+								<asp:LinkButton Text="Name" CommandName="Sort" CommandArgument="Name" runat="Server" />
 							</th>
                             <th>
-								<asp:LinkButton Text="QuestionRefId" CommandName="Sort" CommandArgument="QuestionRefId" runat="Server" />
+								<asp:LinkButton Text="AuthorId" CommandName="Sort" CommandArgument="AuthorId" runat="Server" />
+							</th>
+                            <th>
+								<asp:LinkButton Text="isActive" CommandName="Sort" CommandArgument="isActive" runat="Server" />
 							</th>
                             <th>&nbsp;</th>
                         </tr>
@@ -47,15 +50,18 @@
 								<asp:DynamicControl runat="server" DataField="Id" ID="Id" Mode="ReadOnly" />
 							</td>
 							<td>
-								<asp:DynamicControl runat="server" DataField="isCorrect" ID="isCorrect" Mode="ReadOnly" />
+								<asp:DynamicControl runat="server" DataField="Name" ID="Name" Mode="ReadOnly" />
 							</td>
 							<td>
-								<%#: Item.Question != null ? Item.Question.AuthorId : "" %>
+								<asp:DynamicControl runat="server" DataField="AuthorId" ID="AuthorId" Mode="ReadOnly" />
+							</td>
+							<td>
+								<asp:DynamicControl runat="server" DataField="isActive" ID="isActive" Mode="ReadOnly" />
 							</td>
                     <td>
-					    <asp:HyperLink runat="server" NavigateUrl='<%# FriendlyUrl.Href("~/Views/QuestionOption/Details", Item.Id) %>' Text="Details" /> | 
-					    <asp:HyperLink runat="server" NavigateUrl='<%# FriendlyUrl.Href("~/Views/QuestionOption/Edit", Item.Id) %>' Text="Edit" /> | 
-                        <asp:HyperLink runat="server" NavigateUrl='<%# FriendlyUrl.Href("~/Views/QuestionOption/Delete", Item.Id) %>' Text="Delete" />
+					    <asp:HyperLink runat="server" NavigateUrl='<%# FriendlyUrl.Href("~/Views/Test/Details", Item.Id) %>' Text="Details" /> | 
+					    <asp:HyperLink runat="server" NavigateUrl='<%# FriendlyUrl.Href("~/Views/Test/Edit", Item.Id) %>' Text="Edit" /> | 
+                        <asp:HyperLink runat="server" NavigateUrl='<%# FriendlyUrl.Href("~/Views/Test/Delete", Item.Id) %>' Text="Delete" />
                     </td>
                 </tr>
             </ItemTemplate>

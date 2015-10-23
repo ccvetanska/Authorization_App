@@ -5,12 +5,14 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.Entity;
+using Authorization_App.Model;
+using Authorization_App.DataAccess;
 
 namespace Authorization_App.Views.QuestionOption
 {
     public partial class Insert : System.Web.UI.Page
     {
-        protected Authorization_App.DataAccess.ApplicationDbContext _db = new Authorization_App.DataAccess.ApplicationDbContext();
+		protected Authorization_App.DataAccess.ApplicationDbContext _db = new Authorization_App.DataAccess.ApplicationDbContext();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -43,11 +45,6 @@ namespace Authorization_App.Views.QuestionOption
             if (e.CommandName.Equals("Cancel", StringComparison.OrdinalIgnoreCase))
             {
                 Response.Redirect("Default");
-            }
-
-            if (e.CommandName.Equals("Add_Content", StringComparison.OrdinalIgnoreCase))
-            {
-                Response.Redirect("~/Views/Content/Insert");
             }
         }
     }

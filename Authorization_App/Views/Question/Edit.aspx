@@ -4,7 +4,7 @@
     <div>
         <p>&nbsp;</p>
         <asp:FormView runat="server"
-            ItemType="Authorization_App.Models.Question" DefaultMode="Edit" DataKeyNames="Id"
+            ItemType="Authorization_App.Model.Question" DefaultMode="Edit" DataKeyNames="Id"
             UpdateMethod="UpdateItem" SelectMethod="GetItem"
             OnItemCommand="ItemCommand" RenderOuterTable="false">
             <EmptyDataTemplate>
@@ -14,7 +14,6 @@
                 <fieldset class="form-horizontal">
                     <legend>Edit Question</legend>
                     <asp:ValidationSummary runat="server" CssClass="alert alert-danger" />
-                    <asp:DynamicControl Mode="ReadOnly" DataField="AuthorId" runat="server" />
                     <asp:DynamicControl Mode="Edit" DataField="QuestionType" runat="server" />
                     <asp:DynamicControl Mode="Edit" DataField="Title" runat="server" />
                     <asp:DynamicControl Mode="Edit" DataField="Description" runat="server" />
@@ -23,8 +22,8 @@
                     <asp:DynamicControl Mode="ReadOnly" DataField="UpdatedAt" runat="server" />
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
-                            <asp:Button runat="server" ID="UpdateButton" CommandName="Update" Text="Update" CssClass="btn btn-primary" />
                             <asp:Button runat="server" ID="AddOptionButton" CommandName="Add_Option" Text="Add Option" CssClass="btn btn-default" />
+                            <asp:Button runat="server" ID="UpdateButton" CommandName="Update" Text="Update" CssClass="btn btn-primary" />
                             <asp:Button runat="server" ID="CancelButton" CommandName="Cancel" Text="Cancel" CausesValidation="false" CssClass="btn btn-default" />
                         </div>
                     </div>

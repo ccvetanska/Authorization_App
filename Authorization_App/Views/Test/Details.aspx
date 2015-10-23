@@ -1,18 +1,18 @@
-﻿<%@ Page Title="QuestionOptionDelete" Language="C#" MasterPageFile="~/Site.Master" CodeBehind="Delete.aspx.cs" Inherits="Authorization_App.Views.QuestionOption.Delete" %>
+﻿<%@ Page Title="Test Details" Language="C#" MasterPageFile="~/Site.Master" CodeBehind="Details.aspx.cs" Inherits="Authorization_App.Views.Test.Details" %>
 <asp:Content runat="server" ContentPlaceHolderID="MainContent">
     <div>
 		<p>&nbsp;</p>
-        <h3>Are you sure want to delete this QuestionOption?</h3>
+      
         <asp:FormView runat="server"
-            ItemType="Authorization_App.Model.QuestionOption, Authorization_App.Model" DataKeyNames="Id"
-            DeleteMethod="DeleteItem" SelectMethod="GetItem"
+            ItemType="Authorization_App.Model.Test" DataKeyNames="Id"
+            SelectMethod="GetItem"
             OnItemCommand="ItemCommand" RenderOuterTable="false">
             <EmptyDataTemplate>
-                Cannot find the QuestionOption with Id <%: Request.QueryString["Id"] %>
+                Cannot find the Test with Id <%: Request.QueryString["Id"] %>
             </EmptyDataTemplate>
             <ItemTemplate>
                 <fieldset class="form-horizontal">
-                    <legend>Delete QuestionOption</legend>
+                    <legend>Test Details</legend>
 							<div class="row">
 								<div class="col-sm-2 text-right">
 									<strong>Id</strong>
@@ -23,18 +23,26 @@
 							</div>
 							<div class="row">
 								<div class="col-sm-2 text-right">
-									<strong>isCorrect</strong>
+									<strong>Name</strong>
 								</div>
 								<div class="col-sm-4">
-									<asp:DynamicControl runat="server" DataField="isCorrect" ID="isCorrect" Mode="ReadOnly" />
+									<asp:DynamicControl runat="server" DataField="Name" ID="Name" Mode="ReadOnly" />
 								</div>
 							</div>
 							<div class="row">
 								<div class="col-sm-2 text-right">
-									<strong>QuestionRefId</strong>
+									<strong>AuthorId</strong>
 								</div>
 								<div class="col-sm-4">
-									<%#: Item.Question != null ? Item.Question.AuthorId : "" %>
+									<asp:DynamicControl runat="server" DataField="AuthorId" ID="AuthorId" Mode="ReadOnly" />
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-2 text-right">
+									<strong>isActive</strong>
+								</div>
+								<div class="col-sm-4">
+									<asp:DynamicControl runat="server" DataField="isActive" ID="isActive" Mode="ReadOnly" />
 								</div>
 							</div>
                  	<div class="row">
@@ -42,8 +50,7 @@
 					</div>
 					<div class="form-group">
 						<div class="col-sm-offset-2 col-sm-10">
-							<asp:Button ID="DeleteButton" runat="server" CommandName="Delete" Text="Delete" CssClass="btn btn-danger" />
-							<asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Cancel" CssClass="btn btn-default" />
+							<asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Back" CssClass="btn btn-default" />
 						</div>
 					</div>
                 </fieldset>

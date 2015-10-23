@@ -8,8 +8,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Authorization_App.Views.Content {
-    public partial class Insert {
+namespace Authorization_App.Views.Test {
+    public partial class Edit {
         
         /// <summary>
         /// form1 control.

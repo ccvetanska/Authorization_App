@@ -2,36 +2,41 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Web.ModelBinding;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.Entity;
-using Microsoft.AspNet.FriendlyUrls.ModelBinding;
 using Authorization_App.Model;
 using Authorization_App.DataAccess;
 
-namespace Authorization_App.Views.Question
+namespace Authorization_App.Views.Test
 {
-    public partial class Details : System.Web.UI.Page
+    public partial class Insert : System.Web.UI.Page
     {
 		protected Authorization_App.DataAccess.ApplicationDbContext _db = new Authorization_App.DataAccess.ApplicationDbContext();
 
         protected void Page_Load(object sender, EventArgs e)
         {
+
         }
 
-        // This is the Select methd to selects a single Question item with the id
-        // USAGE: <asp:FormView SelectMethod="GetItem">
-        public Authorization_App.Model.Question GetItem([FriendlyUrlSegmentsAttribute(0)]int? Id)
+        // This is the Insert method to insert the entered Test item
+        // USAGE: <asp:FormView InsertMethod="InsertItem">
+        public void InsertItem()
         {
-            if (Id == null)
-            {
-                return null;
-            }
-
             using (_db)
             {
-	            return _db.Question.Where(m => m.Id == Id).FirstOrDefault();
+                var item = new Authorization_App.Model.Test();
+
+                TryUpdateModel(item);
+
+                if (ModelState.IsValid)
+                {
+                    // Save changes
+                    _db.Test.Add(item);
+                    _db.SaveChanges();
+
+                    Response.Redirect("Default");
+                }
             }
         }
 
@@ -39,9 +44,8 @@ namespace Authorization_App.Views.Question
         {
             if (e.CommandName.Equals("Cancel", StringComparison.OrdinalIgnoreCase))
             {
-                Response.Redirect("../Default");
+                Response.Redirect("Default");
             }
         }
     }
 }
-

@@ -30,6 +30,9 @@ namespace Authorization_App.DataAccess
         // create the table for the QuestionOption
         public DbSet<QuestionOption> QuestionOption { get; set; }
 
+        // create the table for the Test
+        public DbSet<Test> Test { get; set; }
+
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();

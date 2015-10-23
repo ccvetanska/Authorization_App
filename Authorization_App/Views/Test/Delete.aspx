@@ -1,18 +1,18 @@
-﻿<%@ Page Title="QuestionOptionDelete" Language="C#" MasterPageFile="~/Site.Master" CodeBehind="Delete.aspx.cs" Inherits="Authorization_App.Views.QuestionOption.Delete" %>
+﻿<%@ Page Title="TestDelete" Language="C#" MasterPageFile="~/Site.Master" CodeBehind="Delete.aspx.cs" Inherits="Authorization_App.Views.Test.Delete" %>
 <asp:Content runat="server" ContentPlaceHolderID="MainContent">
     <div>
 		<p>&nbsp;</p>
-        <h3>Are you sure want to delete this QuestionOption?</h3>
+        <h3>Are you sure want to delete this Test?</h3>
         <asp:FormView runat="server"
-            ItemType="Authorization_App.Model.QuestionOption, Authorization_App.Model" DataKeyNames="Id"
+            ItemType="Authorization_App.Model.Test" DataKeyNames="Id"
             DeleteMethod="DeleteItem" SelectMethod="GetItem"
             OnItemCommand="ItemCommand" RenderOuterTable="false">
             <EmptyDataTemplate>
-                Cannot find the QuestionOption with Id <%: Request.QueryString["Id"] %>
+                Cannot find the Test with Id <%: Request.QueryString["Id"] %>
             </EmptyDataTemplate>
             <ItemTemplate>
                 <fieldset class="form-horizontal">
-                    <legend>Delete QuestionOption</legend>
+                    <legend>Delete Test</legend>
 							<div class="row">
 								<div class="col-sm-2 text-right">
 									<strong>Id</strong>
@@ -23,18 +23,26 @@
 							</div>
 							<div class="row">
 								<div class="col-sm-2 text-right">
-									<strong>isCorrect</strong>
+									<strong>Name</strong>
 								</div>
 								<div class="col-sm-4">
-									<asp:DynamicControl runat="server" DataField="isCorrect" ID="isCorrect" Mode="ReadOnly" />
+									<asp:DynamicControl runat="server" DataField="Name" ID="Name" Mode="ReadOnly" />
 								</div>
 							</div>
 							<div class="row">
 								<div class="col-sm-2 text-right">
-									<strong>QuestionRefId</strong>
+									<strong>AuthorId</strong>
 								</div>
 								<div class="col-sm-4">
-									<%#: Item.Question != null ? Item.Question.AuthorId : "" %>
+									<asp:DynamicControl runat="server" DataField="AuthorId" ID="AuthorId" Mode="ReadOnly" />
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-2 text-right">
+									<strong>isActive</strong>
+								</div>
+								<div class="col-sm-4">
+									<asp:DynamicControl runat="server" DataField="isActive" ID="isActive" Mode="ReadOnly" />
 								</div>
 							</div>
                  	<div class="row">

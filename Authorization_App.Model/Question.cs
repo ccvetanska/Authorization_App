@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Data.Entity;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using Authorization_App.Nomenclatures;
 
 namespace Authorization_App.Model
@@ -49,6 +50,9 @@ namespace Authorization_App.Model
 
         public Content Content { get; set; }
 
-       public virtual ICollection<QuestionOption> QuestionOption { get; set; }
+        public virtual ICollection<QuestionOption> QuestionOption { get; set; }
+
+        public virtual ICollection<Test> TestsList { get; set; }
+
     }
 }

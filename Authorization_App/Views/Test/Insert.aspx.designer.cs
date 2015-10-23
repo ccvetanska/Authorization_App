@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Authorization_App.Views.Content {
+namespace Authorization_App.Views.Test {
     public partial class Insert {
         
         /// <summary>

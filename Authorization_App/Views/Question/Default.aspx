@@ -8,7 +8,7 @@
     <div>
         <asp:ListView id="ListView1" runat="server"
             DataKeyNames="Id" 
-			ItemType="Authorization_App.Models.Question"
+			ItemType="Authorization_App.Model.Question"
             SelectMethod="GetData">
             <EmptyDataTemplate>
                 There are no entries found for Question
