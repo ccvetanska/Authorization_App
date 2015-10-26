@@ -11,7 +11,7 @@
 				<legend>Insert Test</legend>
 		        <asp:ValidationSummary runat="server" CssClass="alert alert-danger" />
 						    <asp:DynamicControl Mode="Insert" DataField="Name" runat="server" />
-						    <asp:DynamicControl Mode="Insert" DataField="AuthorId" runat="server" />
+						    <%--<asp:DynamicControl Mode="Insert" DataField="AuthorId" runat="server" />--%>
 						    <asp:DynamicControl Mode="Insert" DataField="isActive" runat="server" />
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">

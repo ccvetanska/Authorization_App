@@ -6,7 +6,6 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using System.Web.Security;
 using System.Web.SessionState;
-using Authorization_App.Logic;
 
 namespace Authorization_App
 {

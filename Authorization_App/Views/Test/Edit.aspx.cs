@@ -9,19 +9,27 @@ using System.Data.Entity;
 using Microsoft.AspNet.FriendlyUrls.ModelBinding;
 using Authorization_App.Model;
 using Authorization_App.DataAccess;
+
 namespace Authorization_App.Views.Test
 {
     public partial class Edit : System.Web.UI.Page
     {
-		protected Authorization_App.DataAccess.ApplicationDbContext _db = new Authorization_App.DataAccess.ApplicationDbContext();
+        protected Authorization_App.DataAccess.ApplicationDbContext _db = new Authorization_App.DataAccess.ApplicationDbContext();
+        protected Authorization_App.DataAccess.ApplicationDbContext Question_db = new Authorization_App.DataAccess.ApplicationDbContext();
 
         protected void Page_Load(object sender, EventArgs e)
         {
         }
 
+        // Add Question items
+        public IQueryable<Authorization_App.Model.Question> GetData()
+        {
+            return Question_db.Question;
+        }
+
         // This is the Update methd to update the selected Test item
         // USAGE: <asp:FormView UpdateMethod="UpdateItem">
-        public void UpdateItem(int  Id)
+        public void UpdateItem(int Id)
         {
             using (_db)
             {
@@ -66,6 +74,17 @@ namespace Authorization_App.Views.Test
             {
                 Response.Redirect("../Default");
             }
+            if (e.CommandName.Equals("Add", StringComparison.OrdinalIgnoreCase))
+            {
+                Response.Redirect("~/Views/Question/Default");
+            }
+        }
+
+        protected void Question_Add(object sender, EventArgs e)
+        {
+            //if (QuestionCheckbox.Checked == true)
+            //{
+            //}
         }
     }
 }

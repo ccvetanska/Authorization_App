@@ -219,3 +219,4 @@ FakesAssemblies/
 **/*.Server/GeneratedArtifacts
 **/*.Server/ModelManifest.xml
 _Pvt_Extension
+Authorization_App/Web.config

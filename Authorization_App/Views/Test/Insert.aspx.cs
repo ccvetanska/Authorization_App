@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.Entity;
+using System.Web.Security;
+using Microsoft.AspNet.Identity;
 using Authorization_App.Model;
 using Authorization_App.DataAccess;
 
@@ -28,6 +30,9 @@ namespace Authorization_App.Views.Test
                 var item = new Authorization_App.Model.Test();
 
                 TryUpdateModel(item);
+
+                string userId = HttpContext.Current.User.Identity.GetUserId();
+                item.AuthorId = userId;
 
                 if (ModelState.IsValid)
                 {
