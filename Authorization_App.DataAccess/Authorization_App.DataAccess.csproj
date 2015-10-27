@@ -88,6 +88,10 @@
     <Compile Include="Migrations\201510231348311_test_table.Designer.cs">
       <DependentUpon>201510231348311_test_table.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201510270945468_testSetup.cs" />
+    <Compile Include="Migrations\201510270945468_testSetup.Designer.cs">
+      <DependentUpon>201510270945468_testSetup.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -104,6 +108,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201510231348311_test_table.resx">
       <DependentUpon>201510231348311_test_table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510270945468_testSetup.resx">
+      <DependentUpon>201510270945468_testSetup.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

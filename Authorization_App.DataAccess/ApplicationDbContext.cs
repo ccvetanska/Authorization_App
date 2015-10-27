@@ -33,6 +33,8 @@ namespace Authorization_App.DataAccess
         // create the table for the Test
         public DbSet<Test> Test { get; set; }
 
+        public DbSet<TestSetup> TestSetup { get; set; }
+
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();

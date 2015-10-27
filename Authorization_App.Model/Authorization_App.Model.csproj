@@ -82,6 +82,7 @@
     <Compile Include="Question.cs" />
     <Compile Include="QuestionOption.cs" />
     <Compile Include="Test.cs" />
+    <Compile Include="TestSetup.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
