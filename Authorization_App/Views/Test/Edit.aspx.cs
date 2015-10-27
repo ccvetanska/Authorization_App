@@ -9,6 +9,7 @@ using System.Data.Entity;
 using Microsoft.AspNet.FriendlyUrls.ModelBinding;
 using Authorization_App.Model;
 using Authorization_App.DataAccess;
+using Authorization_App.BusinessServices;
 
 namespace Authorization_App.Views.Test
 {
@@ -86,5 +87,37 @@ namespace Authorization_App.Views.Test
             //{
             //}
         }
+
+        //protected void isAdded_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    QuestionService questionService = new QuestionService(_db);
+        //    CheckBox cb = sender as CheckBox;
+        //    HiddenField hf = null;
+        //    //cb.Parent.Controls is the collection of the cb's brothers in the tree.
+        //    foreach (Control c in cb.Parent.Controls)
+        //    {
+
+        //        if (c is HiddenField)
+        //        {
+        //            hf = c as HiddenField;
+        //        }
+
+        //    }
+        //    if (cb != null && hf != null)
+        //    {
+        //        int id;
+        //        if (Int32.TryParse(hf.Value, out id))
+        //        {
+        //            questionService.ChangeCompleted(id, cb.Checked);
+        //        }
+        //        else
+        //        {
+        //            throw new ArgumentException("Cannot cast string to int!");
+        //        }
+        //    }
+        //    RebindItems(_view.ShowCompleted.Checked);
+        //}
+
+
     }
 }

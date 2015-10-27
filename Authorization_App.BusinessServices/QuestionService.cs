@@ -7,7 +7,7 @@ using System.Web;
 using Authorization_App.Model;
 using Authorization_App.DataAccess;
 
-namespace Authorization_App.Services
+namespace Authorization_App.BusinessServices
 {
     public class QuestionService
     {

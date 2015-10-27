@@ -24,12 +24,13 @@
                         <EmptyDataTemplate>
                             There are no entries found for Question
                         </EmptyDataTemplate>
-                        <LayoutTemplate>
+                        <ItemTemplate>
                             <table class="table">
                                 <thead>
                                     <tr>
                                         <th>
-                                            <asp:LinkButton Text="IsAdded" CommandName="Sort" CommandArgument="IsAdded" runat="Server" />
+                                            <asp:CheckBox Id="isAdded" Text="IsAdded" CommandName="Sort" CommandArgument="IsAdded" runat="Server" />
+                                            <asp:HiddenField ID="hiddenchkBox" runat="server" Value='<%# DataBinder.Eval(Container.DataItem, "Id").ToString() %>' />
                                         </th>
                                         <th>
                                             <asp:LinkButton Text="QuestionType" CommandName="Sort" CommandArgument="QuestionType" runat="Server" />
@@ -60,7 +61,7 @@
                                     <asp:NextPreviousPagerField ShowFirstPageButton="False" ShowPreviousPageButton="False" ButtonType="Button" ButtonCssClass="btn" />
                                 </Fields>
                             </asp:DataPager>
-                        </LayoutTemplate>
+                        </ItemTemplate>
                         <ItemTemplate>
                             <tr>
                                 <td>
