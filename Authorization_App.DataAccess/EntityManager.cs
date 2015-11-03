@@ -11,7 +11,8 @@ namespace Authorization_App.DataAccess
     {
         public EntityManager(DbContext ctx)
             : base(ctx)
-        {
+        {    
         }
+        
     }
 }

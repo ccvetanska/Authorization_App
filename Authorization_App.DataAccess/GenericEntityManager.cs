@@ -11,6 +11,7 @@ namespace Authorization_App.DataAccess
     {
         protected DbContext _context;
         protected DbSet<T> _entities;
+        
 
         public GenericEntityManager(DbContext ctx)
         {
@@ -53,7 +54,7 @@ namespace Authorization_App.DataAccess
 
             return foundEntity;
         }
-
+       
         public IQueryable<T> Query()
         {
             return _entities.AsQueryable();

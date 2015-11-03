@@ -13,8 +13,6 @@
                 <fieldset class="form-horizontal">
                     <legend>Edit TestSetup</legend>
 					<asp:ValidationSummary runat="server" CssClass="alert alert-danger"  />                 
-						    <asp:DynamicControl Mode="Edit" DataField="TestId" runat="server" />
-						    <asp:DynamicControl Mode="Edit" DataField="AuthorId" runat="server" />
 						    <asp:DynamicControl Mode="Edit" DataField="Code" runat="server" />
 						    <asp:DynamicControl Mode="Edit" DataField="ExpiresAt" runat="server" />
                     <div class="form-group">

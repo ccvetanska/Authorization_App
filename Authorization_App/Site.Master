@@ -57,6 +57,7 @@
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
                             <ul class="nav navbar-nav navbar-right">
+                                <li><a runat="server" href="~/Start">Start an interview</a></li>
                                 <li><a runat="server" href="~/Account/Login">Log in</a></li>
                             </ul>
                         </AnonymousTemplate>
@@ -72,8 +73,7 @@
                            <asp:RoleGroup Roles="admin">
                                <ContentTemplate>
                                     <ul class="nav navbar-nav navbar-right">
-
-                                        <li><a runat="server" href="~/Admin/Dashboard">Dashboard</a></li>                                        
+                                        <li><a runat="server" href="~/Views/TestSetup/Default">Test Setup</a></li>                                         
                                         <li><a runat="server" href="~/Views/Question/Default">Questions</a></li>
                                         <li><a runat="server" href="~/Views/Test/Default">Tests</a></li>
                                         <li><a runat="server" href="~/Account/Register">Register</a></li>

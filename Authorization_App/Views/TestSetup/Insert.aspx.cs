@@ -29,10 +29,21 @@ namespace Authorization_App.Views.TestSetup
             {
                 var item = new Authorization_App.Model.TestSetup();
 
-                TryUpdateModel(item);
+                //The default Expire Date of the TestSetup is set to a day from the Creation Date
+                item.ExpiresAt = DateTime.Now.AddDays(1);
+
+                //We use System.Guid to generate a random string. The parameter "N" is used to set the format.
+                //It means 32 digits without hyphens and braces.
+                string rand32digString = System.Guid.NewGuid().ToString("N");
+
+                //We will need only the first 8 digits of this string.
+                item.Code = rand32digString.Substring(0,8);
 
                 string userId = HttpContext.Current.User.Identity.GetUserId();
                 item.AuthorId = userId;
+
+                TryUpdateModel(item);
+
 
                 if (ModelState.IsValid)
                 {

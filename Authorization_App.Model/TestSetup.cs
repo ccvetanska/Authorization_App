@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Authorization_App.Model
 {
@@ -14,15 +15,6 @@ namespace Authorization_App.Model
 
         public TestSetup()
         {
-            //The default Expire Date of the TestSetup is set to a day from the Creation Date
-            ExpiresAt = DateTime.Now.AddDays(1);
-
-            //We use System.Guid to generate a random string. The parameter "N" is used to set the format.
-            //It means 32 digits without hyphens and braces.
-            string rand32digString = System.Guid.NewGuid().ToString("N");
-
-            //We will need only the first 8 digits of this string.
-            this.Code = rand32digString.Take(8).ToString();
         }
 
         //The id of the Test associated with the TestSetup
@@ -31,6 +23,7 @@ namespace Authorization_App.Model
         public string AuthorId { get; set; }
 
         [StringLength(8)]
+        [Index("UQ_TestSetup_Code", 1, IsUnique=true)]
         public string Code { get; set; }
 
         public TimeSpan Time()
