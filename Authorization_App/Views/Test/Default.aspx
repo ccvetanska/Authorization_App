@@ -6,10 +6,11 @@
         <asp:HyperLink runat="server" NavigateUrl="Insert" Text="Create new" />
     </p>
     <div>
-        <asp:ListView id="ListView1" runat="server"
+        <asp:ListView id="qListView" runat="server"
             DataKeyNames="Id" 
 			ItemType="Authorization_App.Model.Test"
-            SelectMethod="GetData">
+            SelectMethod="GetData"
+            >
             <EmptyDataTemplate>
                 There are no entries found for Test
             </EmptyDataTemplate>

@@ -42,5 +42,45 @@ namespace Authorization_App.BusinessServices
             return null;
         }
 
+        public Test Find(int id)
+        {
+            Test res = TestManager.Find(id);
+            return res;
+        }
+
+        /// <summary>
+        /// Adds or removes element from list. If operation is true, adds it. Removes it otherwise.
+        /// </summary>
+        /// <param name="list"></param>
+        /// <param name="operation"></param>
+        /// <param name="element"></param>
+        public void manageList(List<int> list, bool operation, int element)
+        {
+            if (operation)
+            {
+                list.Add(element);
+            }
+            else
+            {
+                list.Remove(element);
+            }
+
+        }
+
+        public void AddQuestionToTest(int questionId, int testId, DbContext qdbCtx, DbContext tdbCtx)
+        {
+            QuestionService qservice= new QuestionService(qdbCtx);
+            TestService tservice = new TestService(tdbCtx);
+
+            Question q = qservice.Find(questionId);
+            Test t = tservice.Find(testId);
+
+            t.Questions.Add(q);
+            q.TestsList.Add(t);
+            
+            qservice.QuestionManager.Update(q);
+            tservice.TestManager.Update(t);
+        }
+
     }
 }

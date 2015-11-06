@@ -59,5 +59,6 @@ namespace Authorization_App.DataAccess
         {
             return _entities.AsQueryable();
         }
+
     }
 }

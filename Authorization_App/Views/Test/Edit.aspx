@@ -6,7 +6,8 @@
         <asp:FormView runat="server"
             ItemType="Authorization_App.Model.Test" DefaultMode="Edit" DataKeyNames="Id"
             UpdateMethod="UpdateItem" SelectMethod="GetItem"
-            OnItemCommand="ItemCommand" RenderOuterTable="false">
+            OnItemCommand="ItemCommand" RenderOuterTable="false"
+            Id="formViewId">
             <EmptyDataTemplate>
                 Cannot find the Test with Id <%: Request.QueryString["Id"] %>
             </EmptyDataTemplate>
@@ -17,20 +18,19 @@
                     <asp:DynamicControl Mode="Edit" DataField="Name" runat="server" />
                     <asp:DynamicControl Mode="Edit" DataField="isActive" runat="server" />
 
-                    <asp:ListView ID="ListView1" runat="server"
+                    <asp:ListView ID="qListView_edit" runat="server"
                         DataKeyNames="Id"
                         ItemType="Authorization_App.Model.Question"
                         SelectMethod="GetData">
                         <EmptyDataTemplate>
                             There are no entries found for Question
                         </EmptyDataTemplate>
-                        <ItemTemplate>
+                        <LayoutTemplate>
                             <table class="table">
                                 <thead>
                                     <tr>
                                         <th>
-                                            <asp:CheckBox Id="isAdded" Text="IsAdded" CommandName="Sort" CommandArgument="IsAdded" runat="Server" />
-                                            <asp:HiddenField ID="hiddenchkBox" runat="server" Value='<%# DataBinder.Eval(Container.DataItem, "Id").ToString() %>' />
+                                            <asp:LinkButton Id="isAdded" Text="IsAdded" CommandName="Sort" CommandArgument="IsAdded" runat="Server" />
                                         </th>
                                         <th>
                                             <asp:LinkButton Text="QuestionType" CommandName="Sort" CommandArgument="QuestionType" runat="Server" />
@@ -61,11 +61,12 @@
                                     <asp:NextPreviousPagerField ShowFirstPageButton="False" ShowPreviousPageButton="False" ButtonType="Button" ButtonCssClass="btn" />
                                 </Fields>
                             </asp:DataPager>
-                        </ItemTemplate>
+                        </LayoutTemplate>
                         <ItemTemplate>
                             <tr>
                                 <td>
-                                    <asp:CheckBox runat="server" ID="QuestionCheckbox" Checked="false" OnCheckedChanged="Question_Add" />
+                                    <asp:CheckBox runat="server" ID="QuestionCheckbox" Checked="false" OnCheckedChanged="QuestionCheckbox_CheckedChanged" AutoPostBack="true"/>
+                                    <asp:HiddenField ID="hdnId" runat="server" Value='<%# DataBinder.Eval(Container.DataItem, "Id").ToString() %>' />
                                 </td>
                                 <td>
                                     <asp:DynamicControl runat="server" DataField="QuestionType" ID="QuestionType" Mode="ReadOnly" />
@@ -87,7 +88,7 @@
                     </asp:ListView>
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
-                            <asp:Button runat="server" ID="AddButton" CommandName="Add" Text="Add Selected Questions" CssClass="btn btn-primary" />
+                            <asp:Button runat="server" ID="AddButton" CommandName="Add" Text="Add Selected Questions" CssClass="btn btn-primary" OnClick="AddButton_Click"/>
                             <asp:Button runat="server" ID="UpdateButton" CommandName="Update" Text="Update" CssClass="btn btn-primary" />
                             <asp:Button runat="server" ID="CancelButton" CommandName="Cancel" Text="Cancel" CausesValidation="false" CssClass="btn btn-default" />
                         </div>

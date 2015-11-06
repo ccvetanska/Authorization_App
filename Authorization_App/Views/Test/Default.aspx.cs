@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data.Entity;
 using Authorization_App.Model;
 using Authorization_App.DataAccess;
+using Microsoft.Owin.Security.OAuth;
 
 namespace Authorization_App.Views.Test
 {
@@ -16,6 +17,13 @@ namespace Authorization_App.Views.Test
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Page.IsPostBack) return;
+
+            var questions = (from n in _db.Question
+                         select n).OrderBy(n => n.Title);
+
+            //qListView = questions;
+            //qListView.DataBind();
         }
 
         // Model binding method to get List of Test entries
