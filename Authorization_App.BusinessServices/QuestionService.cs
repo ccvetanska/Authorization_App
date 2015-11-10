@@ -35,5 +35,13 @@ namespace Authorization_App.BusinessServices
             Question res = QuestionManager.Find(id);
             return res;
         }
+
+        public bool isAdded(int qId, int tId)
+        {
+            Question q = QuestionManager.Find(qId);
+            ICollection<Test> questionTests = q.TestsList;
+
+            return questionTests.Any(test => test.Id == tId);
+        }
     }
 }

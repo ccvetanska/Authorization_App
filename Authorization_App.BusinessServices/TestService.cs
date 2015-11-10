@@ -13,8 +13,8 @@ namespace Authorization_App.BusinessServices
     {
         public TestService(DbContext dbCtx)
         {
-            TestManager = new EntityManager<Test>(dbCtx);
-            TestSetupManager = new EntityManager<TestSetup>(dbCtx); 
+            TestManager = new EntityManager<Test>(dbCtx); 
+            TestSetupManager = new EntityManager<TestSetup>(dbCtx);
         }
 
         public EntityManager<Test> TestManager { get; set; }
@@ -67,20 +67,20 @@ namespace Authorization_App.BusinessServices
 
         }
 
-        public void AddQuestionToTest(int questionId, int testId, DbContext qdbCtx, DbContext tdbCtx)
+        public void AddQuestionToTest(int questionId, int testId, DbContext dbCtx)
         {
-            QuestionService qservice= new QuestionService(qdbCtx);
-            TestService tservice = new TestService(tdbCtx);
+            QuestionService qservice= new QuestionService(dbCtx);
+            TestService tservice = new TestService(dbCtx);
 
             Question q = qservice.Find(questionId);
             Test t = tservice.Find(testId);
 
             t.Questions.Add(q);
             q.TestsList.Add(t);
-            
+                        
             qservice.QuestionManager.Update(q);
             tservice.TestManager.Update(t);
         }
-
+               
     }
 }

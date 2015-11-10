@@ -50,8 +50,9 @@ namespace Authorization_App.DataAccess
 
         public T Find(K id)
         {
-            T foundEntity = _entities.Find(new K[1] { id });
+            //T foundEntity = _entities.Find(new K[1] { id });
 
+            T foundEntity = _entities.Find(id);
             return foundEntity;
         }
        

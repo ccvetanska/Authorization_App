@@ -17,10 +17,10 @@ namespace Authorization_App.Views.Test
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Page.IsPostBack) return;
+            //if (Page.IsPostBack) return;
 
-            var questions = (from n in _db.Question
-                         select n).OrderBy(n => n.Title);
+            //var questions = (from n in _db.Question
+            //             select n).OrderBy(n => n.Title);
 
             //qListView = questions;
             //qListView.DataBind();

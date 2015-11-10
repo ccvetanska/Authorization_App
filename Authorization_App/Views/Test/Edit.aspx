@@ -1,5 +1,4 @@
 ﻿<%@ Page Title="TestEdit" Language="C#" MasterPageFile="~/Site.Master" CodeBehind="Edit.aspx.cs" Inherits="Authorization_App.Views.Test.Edit" %>
-
 <asp:Content runat="server" ContentPlaceHolderID="MainContent">
     <div>
         <p>&nbsp;</p>
@@ -21,7 +20,7 @@
                     <asp:ListView ID="qListView_edit" runat="server"
                         DataKeyNames="Id"
                         ItemType="Authorization_App.Model.Question"
-                        SelectMethod="GetData">
+                        SelectMethod="GetData">                       
                         <EmptyDataTemplate>
                             There are no entries found for Question
                         </EmptyDataTemplate>
@@ -30,13 +29,13 @@
                                 <thead>
                                     <tr>
                                         <th>
-                                            <asp:LinkButton Id="isAdded" Text="IsAdded" CommandName="Sort" CommandArgument="IsAdded" runat="Server" />
-                                        </th>
-                                        <th>
-                                            <asp:LinkButton Text="QuestionType" CommandName="Sort" CommandArgument="QuestionType" runat="Server" />
+                                            <asp:LinkButton Id="isAdded" Text="IsAdded" CommandArgument="IsAdded" runat="Server" Enabled="false"/>
                                         </th>
                                         <th>
                                             <asp:LinkButton Text="Title" CommandName="Sort" CommandArgument="Title" runat="Server" />
+                                        </th>
+                                        <th>
+                                            <asp:LinkButton Text="QuestionType" CommandName="Sort" CommandArgument="QuestionType" runat="Server" />                                            
                                         </th>
                                         <th>
                                             <asp:LinkButton Text="Description" CommandName="Sort" CommandArgument="Description" runat="Server" />
@@ -65,14 +64,14 @@
                         <ItemTemplate>
                             <tr>
                                 <td>
-                                    <asp:CheckBox runat="server" ID="QuestionCheckbox" Checked="false" OnCheckedChanged="QuestionCheckbox_CheckedChanged" AutoPostBack="true"/>
+                                    <asp:CheckBox runat="server" ID="QuestionCheckbox" Checked='<%# Convert.ToBoolean(isAdded(DataBinder.Eval(Container.DataItem, "Id").ToString())) ? true : false %>' OnCheckedChanged="QuestionCheckbox_CheckedChanged" AutoPostBack="true"/>
                                     <asp:HiddenField ID="hdnId" runat="server" Value='<%# DataBinder.Eval(Container.DataItem, "Id").ToString() %>' />
                                 </td>
                                 <td>
-                                    <asp:DynamicControl runat="server" DataField="QuestionType" ID="QuestionType" Mode="ReadOnly" />
+                                    <asp:DynamicControl runat="server" DataField="Title" ID="Title" Mode="ReadOnly" />
                                 </td>
                                 <td>
-                                    <asp:DynamicControl runat="server" DataField="Title" ID="Title" Mode="ReadOnly" />
+                                    <asp:DynamicControl runat="server" DataField="QuestionType" ID="QuestionType" Mode="ReadOnly" />
                                 </td>
                                 <td>
                                     <asp:DynamicControl runat="server" DataField="Description" ID="Description" Mode="ReadOnly" />
@@ -97,5 +96,7 @@
             </EditItemTemplate>
         </asp:FormView>
     </div>
+    
 </asp:Content>
+
 
