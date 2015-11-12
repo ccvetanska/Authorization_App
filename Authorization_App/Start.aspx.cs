@@ -28,7 +28,7 @@ namespace Authorization_App
             Test ts=testService.FindTestByCode(code);  
             if (ts!= null)
             {
-
+                Response.Redirect("../Default");
             }
             else
             {

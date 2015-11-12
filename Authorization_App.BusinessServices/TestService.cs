@@ -33,9 +33,12 @@ namespace Authorization_App.BusinessServices
 
             foreach (TestSetup ts in tsQuery)
             {
+                Test test=null;
                 if (ts.Code == code)
                 {
-                    return TestManager.Find(ts.TestId);
+                    test = TestManager.Find(ts.TestId);
+                    if(test!=null && test.isActive==true)
+                        return test;
                 }
             }
                            
