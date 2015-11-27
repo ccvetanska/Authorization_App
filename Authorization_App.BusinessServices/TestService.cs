@@ -51,6 +51,17 @@ namespace Authorization_App.BusinessServices
             return res;
         }
 
+        public Test Find(string name)
+        {
+            var tsQuery = TestManager.Query();
+            foreach (Test t in tsQuery)
+            {
+                if (t.Name == name)
+                    return t;               
+            }
+            return null;
+        }
+
         /// <summary>
         /// Adds or removes element from list. If operation is true, adds it. Removes it otherwise.
         /// </summary>
@@ -70,6 +81,12 @@ namespace Authorization_App.BusinessServices
 
         }
 
+        public IQueryable<Test> GetAll()
+        {
+            return TestManager.Query();
+
+        }
+
         public void AddQuestionToTest(int questionId, int testId, DbContext dbCtx)
         {
             QuestionService qservice= new QuestionService(dbCtx);
@@ -83,6 +100,21 @@ namespace Authorization_App.BusinessServices
                         
             qservice.QuestionManager.Update(q);
             tservice.TestManager.Update(t);
+        }
+
+        public Question FindQuestionInTestByIndex(int testId, int questionIndex)
+        {
+            Test test = TestManager.Find(testId);
+            if (test!=null && (questionIndex < test.Questions.Count))
+            {
+                return test.Questions.ElementAt(questionIndex);
+            }
+            return null;
+        }
+
+        public bool IsLastQuestionInTest(Question q, Test ts)
+        {
+            return ts.Questions.Last().Id == q.Id;
         }
                
     }

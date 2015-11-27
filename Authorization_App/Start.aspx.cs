@@ -25,10 +25,12 @@ namespace Authorization_App
 
             string code = CodeTextBox.Text;
             TestService testService = new TestService(_db);
-            Test ts=testService.FindTestByCode(code);  
+            Test ts = testService.FindTestByCode(code); 
             if (ts!= null)
             {
-                Response.Redirect("../Default");
+                Session["Test"] = ts;
+                Response.Redirect("Interview");
+                
             }
             else
             {

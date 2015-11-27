@@ -29,6 +29,16 @@ namespace Authorization_App.BusinessServices
             Question res = QuestionManager.Add(q);
             return res;
         }
+        
+        public string GetQuestionText(int id)
+        {
+            Question q = QuestionManager.Find(id);
+            if (q!= null)
+            {
+                return q.Description;
+            }
+            return null;
+        }
 
         public Question Find(int id)
         {

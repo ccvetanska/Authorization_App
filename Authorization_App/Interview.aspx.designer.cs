@@ -7,18 +7,27 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Authorization_App.Views.TestSetup {
+namespace Authorization_App {
     
     
-    public partial class Insert {
+    public partial class Interview {
         
         /// <summary>
-        /// formviewID control.
+        /// QuestionText control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FormView formviewID;
+        protected global::System.Web.UI.WebControls.Label QuestionText;
+        
+        /// <summary>
+        /// NextQuestionBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button NextQuestionBtn;
     }
 }

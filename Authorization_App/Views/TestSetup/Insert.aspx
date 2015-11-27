@@ -3,7 +3,7 @@
 <asp:Content runat="server" ContentPlaceHolderID="MainContent">
     <div>
         <p>&nbsp;</p>
-        <asp:FormView runat="server"
+        <asp:FormView runat="server" ID="formviewID"
             ItemType="Authorization_App.Model.TestSetup" DefaultMode="Insert"
             InsertItemPosition="FirstItem" InsertMethod="InsertItem"
             OnItemCommand="ItemCommand" RenderOuterTable="false">
@@ -12,11 +12,15 @@
                     <legend>Insert TestSetup</legend>
                     <asp:ValidationSummary runat="server" CssClass="alert alert-danger" />
                     <asp:DynamicControl Mode="ReadOnly" DataField="TestId" runat="server" />
-                    <asp:DropDownList runat="server" DataSourceID="" DataTextField="" DataValueField="">
-
+                    <asp:DropDownList runat="server" ID="testDrpdwn">
+<%--                        DataSourceID="" DataTextField="" DataValueField=""--%>
                     </asp:DropDownList>
-                    <%--						    <asp:DynamicControl Mode="Insert" DataField="Code" runat="server" />--%>
-                    						    <asp:DynamicControl Mode="ReadOnly" DataField="ExpiresAt" runat="server" />
+              
+                    <asp:Calendar runat="server" ID="ExpiresAtClndr"
+                        OnSelectionChanged="ExpiresAtClndr_SelectionChanged" 
+                        SelectedDate="<%# DateTime.Today.AddDays(1) %>" >
+                    </asp:Calendar>
+
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
                             <asp:Button runat="server" ID="InsertButton" CommandName="Insert" Text="Insert" CssClass="btn btn-primary" />

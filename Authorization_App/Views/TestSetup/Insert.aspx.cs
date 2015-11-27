@@ -6,7 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.Entity;
 using Authorization_App.Model;
-using Authorization_App.DataAccess;
+using Authorization_App.BusinessServices;
 using System.Web.Security;
 using Microsoft.AspNet.Identity;
 
@@ -18,8 +18,30 @@ namespace Authorization_App.Views.TestSetup
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                ViewState["expDate"] = DateTime.Now.AddDays(1);
+                var ExpiresAtClndr = formviewID.FindControl("ExpiresAtClndr") as Calendar;
+                ExpiresAtClndr.SelectionChanged += new EventHandler(this.ExpiresAtClndr_SelectionChanged);
+                var testDropdown = formviewID.FindControl("testDrpdwn") as DropDownList;
 
+                //populate dropdown list here
+
+                TestService testService = new TestService(_db);
+
+                var testQuery = testService.GetAll();
+                List<string> testList = new List<string>();
+                foreach (Model.Test t in testQuery)
+                {
+                    testList.Add(t.Name);
+                }
+
+                testDropdown.DataSource = testList;
+                testDropdown.DataBind();
+            }
+                          
         }
+
 
         // This is the Insert method to insert the entered TestSetup item
         // USAGE: <asp:FormView InsertMethod="InsertItem">
@@ -27,10 +49,14 @@ namespace Authorization_App.Views.TestSetup
         {
             using (_db)
             {
+                var testDropdown = formviewID.FindControl("testDrpdwn") as DropDownList;
                 var item = new Authorization_App.Model.TestSetup();
 
-                //The default Expire Date of the TestSetup is set to a day from the Creation Date
-                item.ExpiresAt = DateTime.Now.AddDays(1);
+
+                if (ViewState["expDate"]!=null)
+                {
+                    item.ExpiresAt = (DateTime)ViewState["expDate"];
+                }                
 
                 //We use System.Guid to generate a random string. The parameter "N" is used to set the format.
                 //It means 32 digits without hyphens and braces.
@@ -41,6 +67,18 @@ namespace Authorization_App.Views.TestSetup
 
                 string userId = HttpContext.Current.User.Identity.GetUserId();
                 item.AuthorId = userId;
+
+
+                var selectedTest = testDropdown.SelectedItem;
+                TestService testService = new TestService(_db);
+                
+                Model.Test t =testService.Find(selectedTest.Text);
+
+                if(t!=null)
+                {
+                    item.TestId = t.Id;
+                }
+                
 
                 TryUpdateModel(item);
 
@@ -62,6 +100,21 @@ namespace Authorization_App.Views.TestSetup
             {
                 Response.Redirect("Default");
             }
+        }
+
+
+        protected void ExpiresAtClndr_SelectionChanged(object sender, EventArgs e)
+        {
+            Calendar cl = sender as Calendar;
+            if (cl.SelectedDate != null)
+            {
+                ViewState["expDate"] = cl.SelectedDate;
+            }
+            else
+            {
+                ViewState["expDate"] = DateTime.Now.AddDays(1);
+            }
+
         }
     }
 }
