@@ -22,10 +22,7 @@ namespace Authorization_App
                 ViewState["CurrentQuestionNumber"] = 0;
                 NextQuestionBtn.Text = "Start";
                 Test ts = Session["Test"] as Test;
-                if (ts != null)
-                {
-                   // QuestionText.Text = ts.Questions.ElementAt(0).Description;
-                }
+
             }
         }
 
