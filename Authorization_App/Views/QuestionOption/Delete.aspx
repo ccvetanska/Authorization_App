@@ -34,7 +34,7 @@
 									<strong>QuestionRefId</strong>
 								</div>
 								<div class="col-sm-4">
-									<%#: Item.Question != null ? Item.Question.AuthorId : "" %>
+									<%--#: (Item.Question != null ? Item.Question.AuthorId : "")--%>
 								</div>
 							</div>
                  	<div class="row">

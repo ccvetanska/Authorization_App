@@ -65,9 +65,7 @@ namespace Authorization_App.BusinessServices
         /// <summary>
         /// Adds or removes element from list. If operation is true, adds it. Removes it otherwise.
         /// </summary>
-        /// <param name="list"></param>
-        /// <param name="operation"></param>
-        /// <param name="element"></param>
+
         public void manageList(List<int> list, bool operation, int element)
         {
             if (operation)

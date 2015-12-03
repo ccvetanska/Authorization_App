@@ -22,7 +22,9 @@
                     <asp:DynamicControl Mode="ReadOnly" DataField="UpdatedAt" runat="server" />
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
-                            <asp:Button runat="server" ID="AddOptionButton" CommandName="Add_Option" Text="Add Option" CssClass="btn btn-default" />
+                            <asp:Button runat="server" ID="AddOptionButton" CommandName="Add_Option" Text="Add Option" CssClass="btn btn-default" 
+                                CommandArgument=<%# DataBinder.Eval(Container.DataItem, "Id").ToString() %> 
+                                 OnClick="AddOptionButton_Click" />
                             <asp:Button runat="server" ID="UpdateButton" CommandName="Update" Text="Update" CssClass="btn btn-primary" />
                             <asp:Button runat="server" ID="CancelButton" CommandName="Cancel" Text="Cancel" CausesValidation="false" CssClass="btn btn-default" />
                         </div>

@@ -9,10 +9,10 @@ namespace Authorization_App.Nomenclatures
     {
         public enum QuestionType
         {
-            Single,
-            Multiple,
-            Code,
-            Text
+            Single,                 //radiobuttons
+            Multiple,               //checkboxes
+            Code,                   //code field
+            Text                    //textfield
         }
     }
 }

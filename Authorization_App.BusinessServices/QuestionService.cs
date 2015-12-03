@@ -23,6 +23,7 @@ namespace Authorization_App.BusinessServices
         public EntityManager<QuestionOption> QuestionOptionManager { get; set; }
 
         public EntityManager<Content> ContentManager { get; set; }
+        
        
         public Question Add(Question q)
         {
@@ -46,12 +47,48 @@ namespace Authorization_App.BusinessServices
             return res;
         }
 
+        public bool Delete(int id)
+        {
+            Question q = QuestionManager.Find(id);
+
+            if (q != null && q.QuestionOption != null)
+            {
+                foreach (QuestionOption qo in q.QuestionOption)
+                {
+                    QuestionOptionManager.Delete(qo.Id);
+                }
+            }
+            return QuestionManager.Delete(id);
+        }
+
         public bool isAdded(int qId, int tId)
         {
             Question q = QuestionManager.Find(qId);
             ICollection<Test> questionTests = q.TestsList;
 
             return questionTests.Any(test => test.Id == tId);
+        }
+
+        public string GetQuestionType(Question question)
+        {
+            var qType = question.QuestionType;
+            return qType.ToString();
+        }
+
+        public void AddOptionToQuestion(int questionId, QuestionOption qOption)
+        {
+            Question question = QuestionManager.Find(questionId);
+            if (question!=null && qOption!=null)
+            {
+                question.QuestionOption.Add(qOption);
+            }            
+        }
+
+        public IQueryable<QuestionOption> GetOptionsForQuestion(int questionId)
+        {
+            Question question = QuestionManager.Find(questionId);
+
+            return QuestionOptionManager.Query().Where(qo => qo.Question.Id == question.Id);
         }
     }
 }

@@ -2,6 +2,10 @@
 
 <asp:Content ID="Content" ContentPlaceHolderID="MainContent" runat="server">
     <asp:Label ID="QuestionText" runat="server" Text=""></asp:Label>
- <%--   <asp:DynamicControl ID="QuestionAnswer" runat="server" />--%>
+
+    <asp:CheckBoxList ID="CheckBoxListAnswer" runat="server" Visible="false"></asp:CheckBoxList>
+    <asp:RadioButtonList ID="RadioButtonListAnswer" runat="server" Visible="false"></asp:RadioButtonList>
+    <asp:TextBox ID="TextBoxAnswer" runat="server" Visible="false"></asp:TextBox>
+
     <asp:Button ID="NextQuestionBtn" runat="server" OnClick="NextQuestionBtn_Click" CssClass="btn btn-primary" />
 </asp:Content>

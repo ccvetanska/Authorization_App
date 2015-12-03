@@ -11,12 +11,12 @@
 				<legend>Insert QuestionOption</legend>
 		        <asp:ValidationSummary runat="server" CssClass="alert alert-danger" />
 						    <asp:DynamicControl Mode="Insert" DataField="isCorrect" runat="server" />
-							<asp:DynamicControl Mode="Insert" 
+<%--							<asp:DynamicControl Mode="Insert" 
 								DataField="QuestionRefId" 
 								DataTypeName="Authorization_App.Model.Question, Authorization_App.Model" 
 								DataTextField="AuthorId" 
 								DataValueField="Id" 
-								UIHint="ForeignKey" runat="server" />
+								UIHint="ForeignKey" runat="server" />--%>
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
                             <asp:Button runat="server" ID="InsertButton" CommandName="Insert" Text="Insert" CssClass="btn btn-primary" />

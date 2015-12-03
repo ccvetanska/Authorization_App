@@ -50,7 +50,7 @@
 								<asp:DynamicControl runat="server" DataField="isCorrect" ID="isCorrect" Mode="ReadOnly" />
 							</td>
 							<td>
-								<%#: Item.Question != null ? Item.Question.AuthorId : "" %>
+								<%#: Item.Question != null ? Item.Question.Id.ToString() : "" %>
 							</td>
                     <td>
 					    <asp:HyperLink runat="server" NavigateUrl='<%# FriendlyUrl.Href("~/Views/QuestionOption/Details", Item.Id) %>' Text="Details" /> | 

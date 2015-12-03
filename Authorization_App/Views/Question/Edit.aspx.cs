@@ -17,6 +17,7 @@ namespace Authorization_App.Views.Question
 
         protected void Page_Load(object sender, EventArgs e)
         {
+
         }
 
         // This is the Update methd to update the selected Question item
@@ -69,10 +70,20 @@ namespace Authorization_App.Views.Question
                 Response.Redirect("../Default");
             }
 
-            if (e.CommandName.Equals("Add_Option", StringComparison.OrdinalIgnoreCase))
-            {
-                Response.Redirect("~/Views/QuestionOption/Default");
-            }
+            //if (e.CommandName.Equals("Add_Option", StringComparison.OrdinalIgnoreCase))
+            //{
+
+
+            //}
+        }
+
+        protected void AddOptionButton_Click(object sender, EventArgs e)
+        {
+            var btn = sender as Button;
+            int questionId;
+            Int32.TryParse(btn.CommandArgument, out questionId);
+            Session["questionId"] = questionId;
+            Response.Redirect("~/Views/QuestionOption/Default");
         }
     }
 }

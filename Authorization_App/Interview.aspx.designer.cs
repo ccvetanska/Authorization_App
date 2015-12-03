@@ -22,6 +22,33 @@ namespace Authorization_App {
         protected global::System.Web.UI.WebControls.Label QuestionText;
         
         /// <summary>
+        /// CheckBoxListAnswer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBoxList CheckBoxListAnswer;
+        
+        /// <summary>
+        /// RadioButtonListAnswer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList RadioButtonListAnswer;
+        
+        /// <summary>
+        /// TextBoxAnswer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBoxAnswer;
+        
+        /// <summary>
         /// NextQuestionBtn control.
         /// </summary>
         /// <remarks>

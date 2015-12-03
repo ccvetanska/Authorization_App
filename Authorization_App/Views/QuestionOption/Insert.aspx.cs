@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data.Entity;
 using Authorization_App.Model;
 using Authorization_App.DataAccess;
+using Authorization_App.BusinessServices;
 
 namespace Authorization_App.Views.QuestionOption
 {
@@ -26,7 +27,11 @@ namespace Authorization_App.Views.QuestionOption
             using (_db)
             {
                 var item = new Authorization_App.Model.QuestionOption();
+                int questionId = (int) Session["questionId"];
 
+                QuestionService questionService = new QuestionService(_db);
+                questionService.AddOptionToQuestion(questionId, item);
+                
                 TryUpdateModel(item);
 
                 if (ModelState.IsValid)

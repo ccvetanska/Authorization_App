@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data.Entity;
 using Authorization_App.Model;
 using Authorization_App.DataAccess;
+using Authorization_App.BusinessServices;
 
 namespace Authorization_App.Views.QuestionOption
 {
@@ -22,7 +23,11 @@ namespace Authorization_App.Views.QuestionOption
         // USAGE: <asp:ListView SelectMethod="GetData">
         public IQueryable<Authorization_App.Model.QuestionOption> GetData()
         {
-            return _db.QuestionOption.Include(m => m.Question);
+            int questionId = (int) Session["questionId"];
+            QuestionService questionService = new QuestionService(_db);
+            return questionService.GetOptionsForQuestion(questionId);
+
+            //return _db.QuestionOption.Include(m => m.Question);
         }
     }
 }

@@ -9,6 +9,7 @@ using System.Data.Entity;
 using Microsoft.AspNet.FriendlyUrls.ModelBinding;
 using Authorization_App.Model;
 using Authorization_App.DataAccess;
+using Authorization_App.BusinessServices;
 
 namespace Authorization_App.Views.Question
 {
@@ -24,16 +25,19 @@ namespace Authorization_App.Views.Question
         // USAGE: <asp:FormView DeleteMethod="DeleteItem">
         public void DeleteItem(int Id)
         {
-            using (_db)
-            {
-                var item = _db.Question.Find(Id);
+            //using (_db)
+            //{
+            //    var item = _db.Question.Find(Id);
 
-                if (item != null)
-                {
-                    _db.Question.Remove(item);
-                    _db.SaveChanges();
-                }
-            }
+            //    if (item != null)
+            //    {
+            //        _db.Question.Remove(item);
+            //        _db.SaveChanges();
+            //    }
+            //}
+            QuestionService questionService = new QuestionService(_db);
+            questionService.Delete(Id);
+
             Response.Redirect("../Default");
         }
 
