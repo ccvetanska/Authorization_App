@@ -254,11 +254,6 @@
     <Content Include="Site.Master" />
     <Content Include="Start.aspx" />
     <Content Include="ViewSwitcher.ascx" />
-    <Content Include="Views\Content\Default.aspx" />
-    <Content Include="Views\Content\Delete.aspx" />
-    <Content Include="Views\Content\Details.aspx" />
-    <Content Include="Views\Content\Edit.aspx" />
-    <Content Include="Views\Content\Insert.aspx" />
     <Content Include="Views\QuestionOption\Default.aspx" />
     <Content Include="Views\QuestionOption\Delete.aspx" />
     <Content Include="Views\QuestionOption\Details.aspx" />
@@ -601,41 +596,6 @@
     </Compile>
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Content\Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Content\Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Content\Delete.aspx.cs">
-      <DependentUpon>Delete.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Content\Delete.aspx.designer.cs">
-      <DependentUpon>Delete.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Content\Details.aspx.cs">
-      <DependentUpon>Details.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Content\Details.aspx.designer.cs">
-      <DependentUpon>Details.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Content\Edit.aspx.cs">
-      <DependentUpon>Edit.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Content\Edit.aspx.designer.cs">
-      <DependentUpon>Edit.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Content\Insert.aspx.cs">
-      <DependentUpon>Insert.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Content\Insert.aspx.designer.cs">
-      <DependentUpon>Insert.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\QuestionOption\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>

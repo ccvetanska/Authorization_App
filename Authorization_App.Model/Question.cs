@@ -48,7 +48,9 @@ namespace Authorization_App.Model
         // The date when the question is updated
         public DateTime? UpdatedAt { get; set; }
 
-        public Content Content { get; set; }
+        public string Content { get; set; }
+
+        public ContentTypes.ContentType ContentType { get; set; }
 
         public virtual ICollection<QuestionOption> QuestionOption { get; set; }
 

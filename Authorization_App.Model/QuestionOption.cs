@@ -5,6 +5,7 @@ using System.Web;
 using System.Data.Entity;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Authorization_App.Nomenclatures;
 
 namespace Authorization_App.Model
 {
@@ -15,7 +16,9 @@ namespace Authorization_App.Model
         [Key]
         public int Id { get; set; }
 
-        public Content Content { get; set; }
+        public string Content { get; set; }
+
+        public ContentTypes.ContentType ContentType { get; set; }
 
         public bool isCorrect { get; set; }
 

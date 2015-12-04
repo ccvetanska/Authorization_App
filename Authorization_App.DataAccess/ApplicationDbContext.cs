@@ -25,7 +25,7 @@ namespace Authorization_App.DataAccess
         public DbSet<Question> Question { get; set; }
 
         // create the table for the Content
-        public DbSet<Content> Content { get; set; }
+        //public DbSet<Content> Content { get; set; }
 
         // create the table for the QuestionOption
         public DbSet<QuestionOption> QuestionOption { get; set; }

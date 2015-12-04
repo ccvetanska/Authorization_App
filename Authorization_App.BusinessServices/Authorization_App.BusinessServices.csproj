@@ -48,6 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessRules\CodeQuestionTypeAction.cs" />
+    <Compile Include="BusinessRules\IRuleAction.cs" />
+    <Compile Include="BusinessRules\MultipleQuestionTypeAction.cs" />
+    <Compile Include="BusinessRules\SingleQuestionTypeAction.cs" />
+    <Compile Include="BusinessRules\TextQuestionTypeAction.cs" />
+    <Compile Include="TestReportService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuestionService.cs" />
     <Compile Include="TestService.cs" />

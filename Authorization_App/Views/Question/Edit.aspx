@@ -15,6 +15,7 @@
                     <legend>Edit Question</legend>
                     <asp:ValidationSummary runat="server" CssClass="alert alert-danger" />
                     <asp:DynamicControl Mode="Edit" DataField="QuestionType" runat="server" />
+                    <asp:DynamicControl Mode="Edit" DataField="ContentType" runat="server" />
                     <asp:DynamicControl Mode="Edit" DataField="Title" runat="server" />
                     <asp:DynamicControl Mode="Edit" DataField="Description" runat="server" />
                     <asp:DynamicControl Mode="Edit" DataField="Tags" runat="server" />

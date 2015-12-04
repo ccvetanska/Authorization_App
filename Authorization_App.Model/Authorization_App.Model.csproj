@@ -82,7 +82,7 @@
     <Compile Include="Question.cs" />
     <Compile Include="QuestionOption.cs" />
     <Compile Include="Test.cs" />
-    <Compile Include="TestRecord.cs" />
+    <Compile Include="TestReport.cs" />
     <Compile Include="TestSetup.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Authorization_App.Model
 {
-    public class TestRecord
+    public class TestReport
     {
         public int TestId { get; set; }
 

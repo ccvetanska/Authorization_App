@@ -107,6 +107,10 @@
     <Compile Include="Migrations\201510301221138_testSetup_upd.Designer.cs">
       <DependentUpon>201510301221138_testSetup_upd.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201512031423450_cont_chng.cs" />
+    <Compile Include="Migrations\201512031423450_cont_chng.Designer.cs">
+      <DependentUpon>201512031423450_cont_chng.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MongoConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -131,6 +135,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201510301221138_testSetup_upd.resx">
       <DependentUpon>201510301221138_testSetup_upd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512031423450_cont_chng.resx">
+      <DependentUpon>201512031423450_cont_chng.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
