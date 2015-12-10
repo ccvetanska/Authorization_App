@@ -114,6 +114,20 @@ namespace Authorization_App.BusinessServices
         {
             return ts.Questions.Last().Id == q.Id;
         }
+
+        public List<int> GetQuestionIds(Test ts)
+        {
+            List<int> res = new List<int>();
+            if (ts!=null)
+            {
+                ICollection<Question> questions = ts.Questions;
+                foreach (Question q in questions)
+                {
+                    res.Add(q.Id);
+                }
+            }
+            return res;
+        }
                
     }
 }

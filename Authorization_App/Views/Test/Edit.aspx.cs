@@ -120,11 +120,12 @@ namespace Authorization_App.Views.Test
                 {
                     testService.AddQuestionToTest(questionId, itemId, _db);
                 }
-                System.Windows.Forms.MessageBox.Show("Questions successfuly added!");  
+
+                StatusLabel.Text = "Questions successfuly added!";               
             }
             else
             {
-                System.Windows.Forms.MessageBox.Show("You did not make any changes to the questions."); 
+                StatusLabel.Text= "You did not make any changes to the questions.";
             }
                        
         }

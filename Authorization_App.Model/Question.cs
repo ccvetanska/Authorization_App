@@ -11,6 +11,7 @@ namespace Authorization_App.Model
 {
     // (initial domain class) model class for the table Questions
     // Question may include many QuestionOptions
+    [Serializable]
     public class Question : IEntity
     {
         public Question()

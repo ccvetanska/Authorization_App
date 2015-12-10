@@ -96,7 +96,7 @@
             </EditItemTemplate>
         </asp:FormView>
     </div>
-    
+    <asp:Label runat="server" ID="StatusLabel"></asp:Label>
 </asp:Content>
 
 

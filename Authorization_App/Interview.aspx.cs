@@ -14,6 +14,7 @@ namespace Authorization_App
     {
         protected Authorization_App.DataAccess.ApplicationDbContext _db = new Authorization_App.DataAccess.ApplicationDbContext();
         private List<IRuleAction> ruleActions;
+        protected TestReport testReport;
 
         public Interview()
         {
@@ -26,11 +27,23 @@ namespace Authorization_App
 
 
         protected void Page_Load(object sender, EventArgs e)
-        {
+        {            
             if (!IsPostBack)
             {
                 ViewState["CurrentQuestionNumber"] = 0;
-                NextQuestionBtn.Text = "Start";                
+                NextQuestionBtn.Text = "Start";
+                Test ts = Session["Test"] as Test;
+                TestService testService = new TestService(_db);
+                TestReportService testReportService = new TestReportService();
+                if (ts != null)
+                {
+                    testReport = new TestReport();
+                    testReport.AuthorId = ts.AuthorId;
+                    testReport.TestId = ts.Id;
+                    testReport.QuestionIds = testService.GetQuestionIds(ts);
+                    testReportService.Add(testReport);
+                    //testReportService.Add(new TestReport() { AuthorId = ts.AuthorId, TestId = ts.Id, QuestionIds = testService.GetQuestionIds(ts)});
+                }
             }
         }
 
@@ -41,8 +54,12 @@ namespace Authorization_App
             int crrQuestionNum = (int) ViewState["CurrentQuestionNumber"];
             TestService testService = new TestService(_db);
             QuestionService questionService = new QuestionService(_db);
+            TestReportService testReportService = new TestReportService();
+            
             Test ts = Session["Test"] as Test;
+            
             Question q = null;
+
             if (ts!= null)
             {
                 ClearAllOptions();
@@ -54,13 +71,16 @@ namespace Authorization_App
                     string type = questionService.GetQuestionType(q);                    
                     IRuleAction rule = ruleActions.FirstOrDefault(r => r.IsValidated(type));
                     rule.Action.Invoke();
+                    
                 }
                 else
                 {
                     QuestionText.Text = "";
-                    NextQuestionBtn.Text = "Submit Test";                    
+                    NextQuestionBtn.Visible = false;
+                    SubmitTestBtn.Visible = true;
                 }
             }
+
             crrQuestionNum++;
             ViewState["CurrentQuestionNumber"] = crrQuestionNum;
 
@@ -97,6 +117,7 @@ namespace Authorization_App
             QuestionService questionService = new QuestionService(_db);
             Test ts = Session["Test"] as Test;
             Question q = testService.FindQuestionInTestByIndex(ts.Id, crrQuestionNum);
+
             CheckBoxListAnswer.Visible = true;
             List<string> optionsContent = new List<string>();
             foreach (QuestionOption qo in q.QuestionOption)
@@ -115,6 +136,11 @@ namespace Authorization_App
             Test ts = Session["Test"] as Test;
             Question q = testService.FindQuestionInTestByIndex(ts.Id, crrQuestionNum);
             TextBoxAnswer.Visible = true;
+        }
+
+        protected void SubmitTestBtn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

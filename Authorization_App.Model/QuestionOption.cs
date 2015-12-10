@@ -10,6 +10,7 @@ using Authorization_App.Nomenclatures;
 namespace Authorization_App.Model
 {
     // model class for the table QuestionsOptions
+    [Serializable]
     public class QuestionOption : IEntity
     {
         public QuestionOption() { }

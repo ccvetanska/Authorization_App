@@ -8,6 +8,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Authorization_App.Model
 {
+    [Serializable]
     public class TestSetup: IEntity
     {
         [Key]

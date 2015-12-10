@@ -13,6 +13,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace Authorization_App.Model
 {
+    [Serializable]
     public class Test : IEntity
     {      
         [Key]
